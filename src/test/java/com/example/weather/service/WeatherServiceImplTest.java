@@ -5,7 +5,6 @@ import com.example.weather.adapters.OpenWeatherClient;
 import com.example.weather.dto.WeatherResponse;
 import com.example.weather.model.Location;
 import com.example.weather.model.WeatherRecord;
-import com.example.weather.redis.RedisLockService;
 import com.example.weather.repository.LocationRepository;
 import com.example.weather.repository.WeatherRecordRepository;
 import com.example.weather.service.impl.WeatherServiceImpl;
@@ -27,8 +26,7 @@ public class WeatherServiceImplTest {
     private WeatherRecordRepository weatherRecordRepository;
     private OpenWeatherClient openWeatherClient;
     private ObjectMapper objectMapper;
-    private RedisLockService lockService;
-    private com.example.weather.redis.RedisCacheService cacheService;
+    // no redis lock service in this assignment
     private WeatherServiceImpl service;
 
     @BeforeEach
@@ -38,9 +36,8 @@ public class WeatherServiceImplTest {
         openWeatherClient = mock(OpenWeatherClient.class);
         objectMapper = new ObjectMapper();
         lockService = mock(RedisLockService.class);
-        cacheService = mock(com.example.weather.redis.RedisCacheService.class);
 
-        service = new WeatherServiceImpl(locationRepository, weatherRecordRepository, openWeatherClient, objectMapper, lockService, cacheService);
+        service = new com.example.weather.service.impl.WeatherServiceImpl(locationRepository, weatherRecordRepository, openWeatherClient, objectMapper);
     }
 
     @Test
@@ -53,15 +50,12 @@ public class WeatherServiceImplTest {
         savedLoc.setLatitude(18.5);
         savedLoc.setLongitude(73.8);
         when(locationRepository.save(any(Location.class))).thenReturn(savedLoc);
-
-        // No weather record exists, lock success
+        // No weather record exists
         when(weatherRecordRepository.findByLocationAndDate(any(Location.class), any(LocalDate.class))).thenReturn(Optional.empty());
-        when(cacheService.get(anyString())).thenReturn(null);
-        when(lockService.tryLock(anyString(), anyLong())).thenReturn(true);
-        when(openWeatherClient.getCurrentWeather(18.5,73.8)).thenReturn("{ \"weather\": [{\"description\": \"clear\"}], \"main\": {\"temp\": 25} }");
-        when(weatherRecordRepository.save(any(WeatherRecord.class))).thenAnswer(inv -> inv.getArgument(0));
+        when(openWeatherClient.getCurrentWeather(18.5,73.8)).thenReturn("{ \"weather\": [{\"description\": \"clear\"}], \"main\": {\"temp\": 25, \"humidity\": 50, \"pressure\": 1012}, \"wind\": {\"speed\": 1.2} }");
+        when(weatherRecordRepository.saveAndFlush(any(WeatherRecord.class))).thenAnswer(inv -> inv.getArgument(0));
 
-        WeatherResponse resp = service.getWeather("411014", LocalDate.of(2020,10,15));
+        WeatherResponse resp = service.getWeather("411014", LocalDate.now());
         assertThat(resp).isNotNull();
         assertThat(resp.getPincode()).isEqualTo("411014");
         verify(openWeatherClient).geocodeByPincode("411014");
@@ -69,22 +63,26 @@ public class WeatherServiceImplTest {
     }
 
     @Test
-    public void when_lock_not_acquired_poll_for_record() {
+    public void when_save_conflict_on_weather_then_reread() {
         Location loc = new Location();
         loc.setId(1L);
         loc.setPincode("411014");
         loc.setLatitude(18.5);
         loc.setLongitude(73.8);
         when(locationRepository.findByPincode("411014")).thenReturn(Optional.of(loc));
-        when(weatherRecordRepository.findByLocationAndDate(loc, LocalDate.of(2020,10,15))).thenReturn(Optional.empty());
-        when(cacheService.get(anyString())).thenReturn(null);
-        when(lockService.tryLock(anyString(), anyLong())).thenReturn(false);
-        when(weatherRecordRepository.findByLocationAndDate(any(Location.class), any(LocalDate.class))).thenReturn(Optional.empty());
+        when(weatherRecordRepository.findByLocationAndDate(loc, LocalDate.now())).thenReturn(Optional.empty());
+        when(openWeatherClient.getCurrentWeather(18.5,73.8)).thenReturn("{ \"weather\": [{\"description\": \"clear\"}], \"main\": {\"temp\": 25, \"humidity\": 50, \"pressure\": 1012}, \"wind\": {\"speed\": 1.2} }");
 
-        try {
-            service.getWeather("411014", LocalDate.of(2020,10,15));
-        } catch (RuntimeException e) {
-            assertThat(e.getMessage()).contains("Failed to acquire lock");
-        }
+        WeatherRecord existing = new WeatherRecord();
+        existing.setId(10L);
+        existing.setLocation(loc);
+        existing.setDate(LocalDate.now());
+        existing.setTemperatureC(25.0);
+        when(weatherRecordRepository.saveAndFlush(any(WeatherRecord.class))).thenThrow(new org.springframework.dao.DataIntegrityViolationException("duplicate"));
+        when(weatherRecordRepository.findByLocationAndDate(loc, LocalDate.now())).thenReturn(Optional.of(existing));
+
+        WeatherResponse resp = service.getWeather("411014", LocalDate.now());
+        assertThat(resp).isNotNull();
+        assertThat(resp.getTemperature()).isEqualTo(25.0);
     }
 }

@@ -1,18 +1,16 @@
 package com.example.weather.dto;
 
 import java.time.LocalDate;
-import java.time.OffsetDateTime;
 
 public class WeatherResponse {
     private String pincode;
-    private LocalDate forDate;
-    private double latitude;
-    private double longitude;
-    private String source;
-    private OffsetDateTime fetchedAt;
+    private String place;
+    private LocalDate date;
+    private Double temperature;
+    private Integer humidity;
+    private Integer pressure;
+    private Double windSpeed;
     private String description;
-
-    // getters and setters
 
     public String getPincode() {
         return pincode;
@@ -22,44 +20,52 @@ public class WeatherResponse {
         this.pincode = pincode;
     }
 
-    public LocalDate getForDate() {
-        return forDate;
+    public String getPlace() {
+        return place;
     }
 
-    public void setForDate(LocalDate forDate) {
-        this.forDate = forDate;
+    public void setPlace(String place) {
+        this.place = place;
     }
 
-    public double getLatitude() {
-        return latitude;
+    public LocalDate getDate() {
+        return date;
     }
 
-    public void setLatitude(double latitude) {
-        this.latitude = latitude;
+    public void setDate(LocalDate date) {
+        this.date = date;
     }
 
-    public double getLongitude() {
-        return longitude;
+    public Double getTemperature() {
+        return temperature;
     }
 
-    public void setLongitude(double longitude) {
-        this.longitude = longitude;
+    public void setTemperature(Double temperature) {
+        this.temperature = temperature;
     }
 
-    public String getSource() {
-        return source;
+    public Integer getHumidity() {
+        return humidity;
     }
 
-    public void setSource(String source) {
-        this.source = source;
+    public void setHumidity(Integer humidity) {
+        this.humidity = humidity;
     }
 
-    public OffsetDateTime getFetchedAt() {
-        return fetchedAt;
+    public Integer getPressure() {
+        return pressure;
     }
 
-    public void setFetchedAt(OffsetDateTime fetchedAt) {
-        this.fetchedAt = fetchedAt;
+    public void setPressure(Integer pressure) {
+        this.pressure = pressure;
+    }
+
+    public Double getWindSpeed() {
+        return windSpeed;
+    }
+
+    public void setWindSpeed(Double windSpeed) {
+        this.windSpeed = windSpeed;
     }
 
     public String getDescription() {
