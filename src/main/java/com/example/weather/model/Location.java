@@ -16,6 +16,8 @@ public class Location {
     private Double latitude;
     private Double longitude;
 
+    private String placeName;
+
     private String source;
 
     private OffsetDateTime createdAt;
@@ -52,6 +54,14 @@ public class Location {
 
     public void setLongitude(Double longitude) {
         this.longitude = longitude;
+    }
+
+    public String getPlaceName() {
+        return placeName;
+    }
+
+    public void setPlaceName(String placeName) {
+        this.placeName = placeName;
     }
 
     public String getSource() {

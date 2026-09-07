@@ -1,18 +1,18 @@
 package com.example.weather;
 
-import com.example.weather.dto.WeatherRequest;
+import com.example.weather.adapters.GeocodeResult;
+import com.example.weather.adapters.OpenWeatherClient;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
-import org.springframework.boot.web.server.LocalServerPort;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
+import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.http.ResponseEntity;
-
-import java.time.LocalDate;
+import org.springframework.boot.test.mock.mockito.MockBean;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.ArgumentMatchers.anyDouble;
+import static org.mockito.Mockito.when;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class WeatherControllerTest {
@@ -23,17 +23,20 @@ public class WeatherControllerTest {
     @Autowired
     private TestRestTemplate restTemplate;
 
+    @MockBean
+    private OpenWeatherClient openWeatherClient;
+
     @Test
-    public void smokeTestEndpoint() {
-        String url = "http://localhost:" + port + "/api/v1/weather";
-        WeatherRequest req = new WeatherRequest();
-        req.setPincode("411014");
-        req.setForDate(LocalDate.of(2020,10,15));
+    public void smokeTestEndpoint_get() {
+        when(openWeatherClient.geocodeByPincode("411014"))
+                .thenReturn(new GeocodeResult(18.5, 73.8, "Pune"));
+        when(openWeatherClient.getCurrentWeather(anyDouble(), anyDouble()))
+                .thenReturn("{\"weather\":[{\"description\":\"clear sky\"}],\"main\":{\"temp\":25.0,\"humidity\":60,\"pressure\":1012},\"wind\":{\"speed\":1.5}}");
 
-        HttpHeaders headers = new HttpHeaders();
-        HttpEntity<WeatherRequest> entity = new HttpEntity<>(req, headers);
-
-        ResponseEntity<String> resp = restTemplate.postForEntity(url, entity, String.class);
-        assertThat(resp.getStatusCode().is2xxSuccessful()).isTrue();
+        String url = "http://localhost:" + port + "/api/v1/weather?pincode=411014&for_date=" + java.time.LocalDate.now().toString();
+        ResponseEntity<String> resp = restTemplate.getForEntity(url, String.class);
+        assertThat(resp.getStatusCode().is2xxSuccessful())
+            .as("status=%s body=%s", resp.getStatusCode(), resp.getBody())
+            .isTrue();
     }
 }

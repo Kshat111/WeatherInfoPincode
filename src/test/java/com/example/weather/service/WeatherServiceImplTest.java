@@ -35,7 +35,6 @@ public class WeatherServiceImplTest {
         weatherRecordRepository = mock(WeatherRecordRepository.class);
         openWeatherClient = mock(OpenWeatherClient.class);
         objectMapper = new ObjectMapper();
-        lockService = mock(RedisLockService.class);
 
         service = new com.example.weather.service.impl.WeatherServiceImpl(locationRepository, weatherRecordRepository, openWeatherClient, objectMapper);
     }
@@ -49,7 +48,7 @@ public class WeatherServiceImplTest {
         savedLoc.setPincode("411014");
         savedLoc.setLatitude(18.5);
         savedLoc.setLongitude(73.8);
-        when(locationRepository.save(any(Location.class))).thenReturn(savedLoc);
+        when(locationRepository.saveAndFlush(any(Location.class))).thenReturn(savedLoc);
         // No weather record exists
         when(weatherRecordRepository.findByLocationAndDate(any(Location.class), any(LocalDate.class))).thenReturn(Optional.empty());
         when(openWeatherClient.getCurrentWeather(18.5,73.8)).thenReturn("{ \"weather\": [{\"description\": \"clear\"}], \"main\": {\"temp\": 25, \"humidity\": 50, \"pressure\": 1012}, \"wind\": {\"speed\": 1.2} }");
