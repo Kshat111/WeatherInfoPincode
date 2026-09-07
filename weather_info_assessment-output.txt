@@ -1,0 +1,2633 @@
+====================================================================================================
+PROJECT EXPORT FOR LLMs
+====================================================================================================
+
+PROJECT INFORMATION:
+--------------------------------------------------
+Project Name: weather_info_assessment
+Generated On: 2026-09-07 09:24:23 (Asia/Calcutta / GMT+06:30)
+Total Files Processed: 63
+Export Tool: Easy Whole Project to Single Text File for LLMs v1.1.0
+Tool Author: Jota / José Guilherme Pandolfi
+
+EXPORT CONFIGURATION:
+--------------------------------------------------
+Language: en
+Max File Size: 1 MB
+Include Hidden Files: false
+Output Format: both
+Notification Level: minimal
+Custom File Name Pattern: {workspaceName}-output
+
+================================================================================
+PROJECT STRUCTURE
+================================================================================
+├── 📁 src/
+│   ├── 📁 main/
+│   │   ├── 📁 java/
+│   │   │   └── 📁 com/
+│   │   │       └── 📁 example/
+│   │   │           └── 📁 weather/
+│   │   │               ├── 📁 adapters/
+│   │   │               │   ├── 📁 impl/
+│   │   │               │   │   └── 📄 OpenWeatherClientImpl.java (4.54 KB)
+│   │   │               │   ├── 📄 GeocodeResult.java (852 B)
+│   │   │               │   └── 📄 OpenWeatherClient.java (290 B)
+│   │   │               ├── 📁 api/
+│   │   │               │   ├── 📄 GlobalExceptionHandler.java (2.11 KB)
+│   │   │               │   └── 📄 WeatherController.java (1.33 KB)
+│   │   │               ├── 📁 config/
+│   │   │               │   ├── 📄 OpenWeatherProperties.java (690 B)
+│   │   │               │   └── 📄 RestConfig.java (663 B)
+│   │   │               ├── 📁 dto/
+│   │   │               │   └── 📄 WeatherResponse.java (1.61 KB)
+│   │   │               ├── 📁 exception/
+│   │   │               │   ├── 📄 PincodeNotFoundException.java (348 B)
+│   │   │               │   └── 📄 UpstreamServiceException.java (463 B)
+│   │   │               ├── 📁 model/
+│   │   │               │   ├── 📄 Location.java (1.6 KB)
+│   │   │               │   └── 📄 WeatherRecord.java (2.42 KB)
+│   │   │               ├── 📁 repository/
+│   │   │               │   ├── 📄 LocationRepository.java (315 B)
+│   │   │               │   └── 📄 WeatherRecordRepository.java (437 B)
+│   │   │               ├── 📁 service/
+│   │   │               │   ├── 📁 impl/
+│   │   │               │   │   └── 📄 WeatherServiceImpl.java (6.1 KB)
+│   │   │               │   └── 📄 WeatherService.java (228 B)
+│   │   │               └── 📄 WeatherServiceApplication.java (349 B)
+│   │   └── 📁 resources/
+│   │       └── 📄 application.yml (468 B)
+│   └── 📁 test/
+│       ├── 📁 java/
+│       │   └── 📁 com/
+│       │       └── 📁 example/
+│       │           └── 📁 weather/
+│       │               ├── 📁 adapters/
+│       │               │   └── 📄 OpenWeatherClientImplTest.java (3.26 KB)
+│       │               ├── 📁 integration/
+│       │               ├── 📁 service/
+│       │               │   └── 📄 WeatherServiceImplTest.java (4.23 KB)
+│       │               └── 📄 WeatherControllerTest.java (1.77 KB)
+│       └── 📁 resources/
+│           └── 📄 application.yml (214 B)
+├── 📁 target/
+│   ├── 📁 classes/
+│   │   ├── 📁 com/
+│   │   │   └── 📁 example/
+│   │   │       └── 📁 weather/
+│   │   │           ├── 📁 adapters/
+│   │   │           │   ├── 📁 impl/
+│   │   │           │   │   └── 📄 OpenWeatherClientImpl.class (5.7 KB)
+│   │   │           │   ├── 📄 GeocodeResult.class (1.18 KB)
+│   │   │           │   └── 📄 OpenWeatherClient.class (461 B)
+│   │   │           ├── 📁 api/
+│   │   │           │   ├── 📄 GlobalExceptionHandler.class (4.13 KB)
+│   │   │           │   └── 📄 WeatherController.class (2.09 KB)
+│   │   │           ├── 📁 config/
+│   │   │           │   ├── 📄 OpenWeatherProperties.class (1.04 KB)
+│   │   │           │   └── 📄 RestConfig.class (881 B)
+│   │   │           ├── 📁 dto/
+│   │   │           │   └── 📄 WeatherResponse.class (2.21 KB)
+│   │   │           ├── 📁 exception/
+│   │   │           │   ├── 📄 PincodeNotFoundException.class (627 B)
+│   │   │           │   └── 📄 UpstreamServiceException.class (818 B)
+│   │   │           ├── 📁 model/
+│   │   │           │   ├── 📄 Location.class (2.33 KB)
+│   │   │           │   └── 📄 WeatherRecord.class (3.45 KB)
+│   │   │           ├── 📁 repository/
+│   │   │           │   ├── 📄 LocationRepository.class (555 B)
+│   │   │           │   └── 📄 WeatherRecordRepository.class (673 B)
+│   │   │           ├── 📁 service/
+│   │   │           │   ├── 📁 impl/
+│   │   │           │   │   └── 📄 WeatherServiceImpl.class (7.44 KB)
+│   │   │           │   └── 📄 WeatherService.class (297 B)
+│   │   │           └── 📄 WeatherServiceApplication.class (769 B)
+│   │   └── 📄 application.yml (468 B)
+│   ├── 📁 generated-sources/
+│   │   └── 📁 annotations/
+│   ├── 📁 generated-test-sources/
+│   │   └── 📁 test-annotations/
+│   ├── 📁 maven-status/
+│   │   └── 📁 maven-compiler-plugin/
+│   │       ├── 📁 compile/
+│   │       │   └── 📁 default-compile/
+│   │       │       ├── 📄 createdFiles.lst
+│   │       │       └── 📄 inputFiles.lst (1.54 KB)
+│   │       └── 📁 testCompile/
+│   │           └── 📁 default-testCompile/
+│   │               ├── 📄 createdFiles.lst
+│   │               └── 📄 inputFiles.lst (286 B)
+│   ├── 📁 surefire-reports/
+│   │   ├── 📄 2026-09-06T22-54-59_846.dumpstream (252 B)
+│   │   ├── 📄 2026-09-06T22-55-36_348.dumpstream (252 B)
+│   │   ├── 📄 2026-09-06T22-56-01_455.dumpstream (252 B)
+│   │   ├── 📄 2026-09-06T22-56-31_603.dumpstream (252 B)
+│   │   ├── 📄 2026-09-06T23-08-44_126.dumpstream (252 B)
+│   │   ├── 📄 2026-09-06T23-14-47_398.dumpstream (252 B)
+│   │   ├── 📄 2026-09-07T14-52-04_013.dumpstream (252 B)
+│   │   ├── 📄 com.example.weather.adapters.OpenWeatherClientImplTest.txt (361 B)
+│   │   ├── 📄 com.example.weather.service.WeatherServiceImplTest.txt (353 B)
+│   │   ├── 📄 com.example.weather.WeatherControllerTest.txt (335 B)
+│   │   ├── 📄 TEST-com.example.weather.adapters.OpenWeatherClientImplTest.xml (28.13 KB)
+│   │   ├── 📄 TEST-com.example.weather.service.WeatherServiceImplTest.xml (28.51 KB)
+│   │   └── 📄 TEST-com.example.weather.WeatherControllerTest.xml (33.38 KB)
+│   └── 📁 test-classes/
+│       ├── 📁 com/
+│       │   └── 📁 example/
+│       │       └── 📁 weather/
+│       │           ├── 📁 adapters/
+│       │           │   └── 📄 OpenWeatherClientImplTest.class (4.91 KB)
+│       │           ├── 📁 integration/
+│       │           ├── 📁 service/
+│       │           │   └── 📄 WeatherServiceImplTest.class (6.13 KB)
+│       │           └── 📄 WeatherControllerTest.class (3.59 KB)
+│       └── 📄 application.yml (214 B)
+├── 📄 pom.xml (2.39 KB)
+└── 📄 README.md (9.37 KB)
+
+================================================================================
+PROJECT STATISTICS
+================================================================================
+Total Files: 63
+Total Directories: 59
+Text Files: 32
+Binary Files: 31
+Total Size: 190.32 KB
+
+FILE TYPES DISTRIBUTION:
+------------------------------
+.java           : 20
+.class          : 20
+.dumpstream     : 7
+.yml            : 4
+.lst            : 4
+.xml            : 4
+.txt            : 3
+.md             : 1
+
+================================================================================
+FILE CODE CONTENTS
+================================================================================
+
+
+================================================================================
+FILE: src/main/java/com/example/weather/adapters/impl/OpenWeatherClientImpl.java
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 4.54 KB
+Extension: .java
+Language: java
+Location: src/main/java/com/example/weather/adapters/impl/OpenWeatherClientImpl.java
+Relative Path: src/main/java/com/example/weather/adapters/impl
+Created: 2026-09-06 14:48:07 (Asia/Calcutta / GMT+06:30)
+Modified: 2026-09-06 17:07:53 (Asia/Calcutta / GMT+06:30)
+MD5: 07cace525dd76791c6ee7ecefef61c5e
+SHA256: 880fb9579237efcd22e1dba43b9bc7b247e5027f4cd281a6f18e49fd02a01ca7
+Encoding: ASCII
+
+FILE CONTENT:
+----------------------------------------
+package com.example.weather.adapters.impl;
+
+import com.example.weather.adapters.GeocodeResult;
+import com.example.weather.adapters.OpenWeatherClient;
+import com.example.weather.config.OpenWeatherProperties;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.dao.DataRetrievalFailureException;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
+import org.springframework.web.client.RestClientException;
+import org.springframework.web.client.RestTemplate;
+
+import java.net.URI;
+
+@Component
+public class OpenWeatherClientImpl implements OpenWeatherClient {
+
+    private static final Logger log = LoggerFactory.getLogger(OpenWeatherClientImpl.class);
+
+    private final RestTemplate restTemplate;
+    private final OpenWeatherProperties properties;
+    private final ObjectMapper mapper;
+
+    public OpenWeatherClientImpl(RestTemplate restTemplate, OpenWeatherProperties properties, ObjectMapper mapper) {
+        this.restTemplate = restTemplate;
+        this.properties = properties;
+        this.mapper = mapper;
+    }
+
+    @Override
+    public GeocodeResult geocodeByPincode(String pincode) {
+        try {
+            String country = properties.getDefaultCountry();
+            String url = String.format("http://api.openweathermap.org/geo/1.0/zip?zip=%s,%s&appid=%s", pincode, country, properties.getApiKey());
+            ResponseEntity<String> resp = restTemplate.getForEntity(new URI(url), String.class);
+            if (resp.getStatusCode() == HttpStatus.NOT_FOUND) {
+                throw new com.example.weather.exception.PincodeNotFoundException("Pincode not found: " + pincode);
+            }
+            if (!resp.getStatusCode().is2xxSuccessful()) {
+                throw new com.example.weather.exception.UpstreamServiceException("Geocode call failed: " + resp.getStatusCode());
+            }
+            JsonNode root = mapper.readTree(resp.getBody());
+            double lat = root.path("lat").asDouble();
+            double lon = root.path("lon").asDouble();
+            String name = root.path("name").asText(null);
+            return new GeocodeResult(lat, lon, name);
+        } catch (com.example.weather.exception.PincodeNotFoundException e) {
+            log.warn("Geocoding not found for pincode {}: {}", pincode, e.getMessage());
+            throw e;
+        } catch (Exception e) {
+            log.warn("Geocoding failed for pincode {}: {}", pincode, e.getMessage());
+            throw new com.example.weather.exception.UpstreamServiceException("Geocoding failed", e);
+        }
+    }
+
+    @Override
+    public String getCurrentWeather(double latitude, double longitude) {
+        try {
+            String url = String.format("https://api.openweathermap.org/data/2.5/weather?lat=%s&lon=%s&appid=%s&units=metric", latitude, longitude, properties.getApiKey());
+            ResponseEntity<String> resp = restTemplate.getForEntity(new URI(url), String.class);
+            if (!resp.getStatusCode().is2xxSuccessful()) {
+                throw new com.example.weather.exception.UpstreamServiceException("Weather call failed: " + resp.getStatusCode());
+            }
+            return resp.getBody();
+        } catch (Exception e) {
+            log.warn("Weather fetch failed for {} {}, error: {}", latitude, longitude, e.getMessage());
+            throw new com.example.weather.exception.UpstreamServiceException("Weather fetch failed", e);
+        }
+    }
+
+    @Override
+    public String getHistoricalWeather(double latitude, double longitude, long unixTimestamp) {
+        try {
+            String url = String.format("https://api.openweathermap.org/data/2.5/onecall/timemachine?lat=%s&lon=%s&dt=%d&appid=%s&units=metric", latitude, longitude, unixTimestamp, properties.getApiKey());
+            ResponseEntity<String> resp = restTemplate.getForEntity(new URI(url), String.class);
+            if (!resp.getStatusCode().is2xxSuccessful()) {
+                throw new com.example.weather.exception.UpstreamServiceException("Historical weather call failed: " + resp.getStatusCode());
+            }
+            return resp.getBody();
+        } catch (Exception e) {
+            log.warn("Historical weather fetch failed for {} {}, error: {}", latitude, longitude, e.getMessage());
+            throw new com.example.weather.exception.UpstreamServiceException("Historical weather fetch failed", e);
+        }
+    }
+}
+
+================================================================================
+
+
+================================================================================
+FILE: src/main/java/com/example/weather/adapters/GeocodeResult.java
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 852 B
+Extension: .java
+Language: java
+Location: src/main/java/com/example/weather/adapters/GeocodeResult.java
+Relative Path: src/main/java/com/example/weather/adapters
+Created: 2026-09-06 14:47:55 (Asia/Calcutta / GMT+06:30)
+Modified: 2026-09-06 14:49:31 (Asia/Calcutta / GMT+06:30)
+MD5: 7d962db0b417e0bbe3407777a80d2ef6
+SHA256: b24f7a3cfea1bc4a691888173c387c77b1c825a5e7949825be2fd65fd496dbcd
+Encoding: ASCII
+
+FILE CONTENT:
+----------------------------------------
+package com.example.weather.adapters;
+
+public class GeocodeResult {
+    private double latitude;
+    private double longitude;
+    private String name;
+
+    public GeocodeResult() {
+    }
+
+    public GeocodeResult(double latitude, double longitude, String name) {
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.name = name;
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+}
+
+================================================================================
+
+
+================================================================================
+FILE: src/main/java/com/example/weather/adapters/OpenWeatherClient.java
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 290 B
+Extension: .java
+Language: java
+Location: src/main/java/com/example/weather/adapters/OpenWeatherClient.java
+Relative Path: src/main/java/com/example/weather/adapters
+Created: 2026-09-06 14:47:59 (Asia/Calcutta / GMT+06:30)
+Modified: 2026-09-06 17:07:53 (Asia/Calcutta / GMT+06:30)
+MD5: 28e3b286318adcc8a17b6fd26669b0a9
+SHA256: e52d81427d772e7bbcc55d9c5af1ff5e096a5ff0bff209eb36f821fce0abe613
+Encoding: ASCII
+
+FILE CONTENT:
+----------------------------------------
+package com.example.weather.adapters;
+
+public interface OpenWeatherClient {
+    GeocodeResult geocodeByPincode(String pincode);
+    String getCurrentWeather(double latitude, double longitude);
+    String getHistoricalWeather(double latitude, double longitude, long unixTimestamp);
+}
+
+================================================================================
+
+
+================================================================================
+FILE: src/main/java/com/example/weather/api/GlobalExceptionHandler.java
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 2.11 KB
+Extension: .java
+Language: java
+Location: src/main/java/com/example/weather/api/GlobalExceptionHandler.java
+Relative Path: src/main/java/com/example/weather/api
+Created: 2026-09-06 17:04:51 (Asia/Calcutta / GMT+06:30)
+Modified: 2026-09-06 17:07:53 (Asia/Calcutta / GMT+06:30)
+MD5: 733dfc0f816a332bd58796f9d79d4a67
+SHA256: 8ed4fd074269417c9ff04b90dc4aef835bb79fd12c2e70b265d4aaba52d06278
+Encoding: ASCII
+
+FILE CONTENT:
+----------------------------------------
+package com.example.weather.api;
+
+import com.example.weather.exception.PincodeNotFoundException;
+import com.example.weather.exception.UpstreamServiceException;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+import jakarta.servlet.http.HttpServletRequest;
+import java.time.OffsetDateTime;
+import java.util.HashMap;
+import java.util.Map;
+
+@RestControllerAdvice
+public class GlobalExceptionHandler {
+
+    @ExceptionHandler(PincodeNotFoundException.class)
+    public ResponseEntity<Object> handleNotFound(PincodeNotFoundException ex, HttpServletRequest req) {
+        return errorResponse(HttpStatus.NOT_FOUND, ex.getMessage(), req.getRequestURI());
+    }
+
+    @ExceptionHandler(UpstreamServiceException.class)
+    public ResponseEntity<Object> handleUpstream(UpstreamServiceException ex, HttpServletRequest req) {
+        return errorResponse(HttpStatus.BAD_GATEWAY, ex.getMessage(), req.getRequestURI());
+    }
+
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    public ResponseEntity<Object> handleBadRequest(MethodArgumentNotValidException ex, HttpServletRequest req) {
+        return errorResponse(HttpStatus.BAD_REQUEST, "Invalid request", req.getRequestURI());
+    }
+
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<Object> handleAll(Exception ex, HttpServletRequest req) {
+        return errorResponse(HttpStatus.INTERNAL_SERVER_ERROR, "Internal error", req.getRequestURI());
+    }
+
+    private ResponseEntity<Object> errorResponse(HttpStatus status, String message, String path) {
+        Map<String, Object> body = new HashMap<>();
+        body.put("timestamp", OffsetDateTime.now().toString());
+        body.put("status", status.value());
+        body.put("error", status.getReasonPhrase());
+        body.put("message", message);
+        body.put("path", path);
+        return new ResponseEntity<>(body, status);
+    }
+}
+
+================================================================================
+
+
+================================================================================
+FILE: src/main/java/com/example/weather/api/WeatherController.java
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 1.33 KB
+Extension: .java
+Language: java
+Location: src/main/java/com/example/weather/api/WeatherController.java
+Relative Path: src/main/java/com/example/weather/api
+Created: 2026-09-06 14:44:51 (Asia/Calcutta / GMT+06:30)
+Modified: 2026-09-06 17:07:53 (Asia/Calcutta / GMT+06:30)
+MD5: 06141dd586ba88c6abe1bbe763891e4a
+SHA256: caaa4d9b37d46b9a16de08057ede6e10e5b59624a3f137f575200dc71687f223
+Encoding: ASCII
+
+FILE CONTENT:
+----------------------------------------
+package com.example.weather.api;
+
+import com.example.weather.dto.WeatherResponse;
+import com.example.weather.service.WeatherService;
+import jakarta.validation.constraints.Pattern;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.time.LocalDate;
+
+@RestController
+@Validated
+@RequestMapping("/api/v1/weather")
+public class WeatherController {
+
+    private final WeatherService weatherService;
+
+    public WeatherController(WeatherService weatherService) {
+        this.weatherService = weatherService;
+    }
+
+    @GetMapping
+    public ResponseEntity<WeatherResponse> getWeather(
+            @RequestParam("pincode") @Pattern(regexp = "\\d{4,10}") String pincode,
+            @RequestParam("for_date") @DateTimeFormat(iso = ISO.DATE) LocalDate forDate) {
+
+        WeatherResponse resp = weatherService.getWeather(pincode, forDate);
+        return ResponseEntity.ok(resp);
+    }
+}
+
+================================================================================
+
+
+================================================================================
+FILE: src/main/java/com/example/weather/config/OpenWeatherProperties.java
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 690 B
+Extension: .java
+Language: java
+Location: src/main/java/com/example/weather/config/OpenWeatherProperties.java
+Relative Path: src/main/java/com/example/weather/config
+Created: 2026-09-06 14:47:50 (Asia/Calcutta / GMT+06:30)
+Modified: 2026-09-06 14:49:31 (Asia/Calcutta / GMT+06:30)
+MD5: bfdc1e1cd254cc40113604e2485e022c
+SHA256: 663fd178f26e06a31277b8a6f4656cc42c7172aa5f543d4542412b4b250d447d
+Encoding: ASCII
+
+FILE CONTENT:
+----------------------------------------
+package com.example.weather.config;
+
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.stereotype.Component;
+
+@Component
+@ConfigurationProperties(prefix = "openweather")
+public class OpenWeatherProperties {
+    private String apiKey;
+    private String defaultCountry = "IN";
+
+    public String getApiKey() {
+        return apiKey;
+    }
+
+    public void setApiKey(String apiKey) {
+        this.apiKey = apiKey;
+    }
+
+    public String getDefaultCountry() {
+        return defaultCountry;
+    }
+
+    public void setDefaultCountry(String defaultCountry) {
+        this.defaultCountry = defaultCountry;
+    }
+}
+
+================================================================================
+
+
+================================================================================
+FILE: src/main/java/com/example/weather/config/RestConfig.java
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 663 B
+Extension: .java
+Language: java
+Location: src/main/java/com/example/weather/config/RestConfig.java
+Relative Path: src/main/java/com/example/weather/config
+Created: 2026-09-06 14:47:46 (Asia/Calcutta / GMT+06:30)
+Modified: 2026-09-06 17:28:23 (Asia/Calcutta / GMT+06:30)
+MD5: 926f8f3f6c4c26dc35893f2cd89598f5
+SHA256: b83af671af8e666b4647b4438e2269062f205cf7bb7313732ae32fd6d7f4184d
+Encoding: ASCII
+
+FILE CONTENT:
+----------------------------------------
+package com.example.weather.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.http.client.BufferingClientHttpRequestFactory;
+import org.springframework.http.client.SimpleClientHttpRequestFactory;
+import org.springframework.web.client.RestTemplate;
+
+@Configuration
+public class RestConfig {
+
+    @Bean
+    public RestTemplate restTemplate() {
+        // Buffering wrapper to allow multiple reads of response (for logging/tests)
+        return new RestTemplate(new BufferingClientHttpRequestFactory(new SimpleClientHttpRequestFactory()));
+    }
+
+}
+
+================================================================================
+
+
+================================================================================
+FILE: src/main/java/com/example/weather/dto/WeatherResponse.java
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 1.61 KB
+Extension: .java
+Language: java
+Location: src/main/java/com/example/weather/dto/WeatherResponse.java
+Relative Path: src/main/java/com/example/weather/dto
+Created: 2026-09-06 14:45:11 (Asia/Calcutta / GMT+06:30)
+Modified: 2026-09-06 17:07:53 (Asia/Calcutta / GMT+06:30)
+MD5: 7d2d693c8b6bc898c863b83a748352b3
+SHA256: 2e3ea8f744afb5d1b174f29ada74ccc38e4ce0c264d8eb7a57c366dcdf6b766d
+Encoding: ASCII
+
+FILE CONTENT:
+----------------------------------------
+package com.example.weather.dto;
+
+import java.time.LocalDate;
+
+public class WeatherResponse {
+    private String pincode;
+    private String place;
+    private LocalDate date;
+    private Double temperature;
+    private Integer humidity;
+    private Integer pressure;
+    private Double windSpeed;
+    private String description;
+
+    public String getPincode() {
+        return pincode;
+    }
+
+    public void setPincode(String pincode) {
+        this.pincode = pincode;
+    }
+
+    public String getPlace() {
+        return place;
+    }
+
+    public void setPlace(String place) {
+        this.place = place;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+
+    public Double getTemperature() {
+        return temperature;
+    }
+
+    public void setTemperature(Double temperature) {
+        this.temperature = temperature;
+    }
+
+    public Integer getHumidity() {
+        return humidity;
+    }
+
+    public void setHumidity(Integer humidity) {
+        this.humidity = humidity;
+    }
+
+    public Integer getPressure() {
+        return pressure;
+    }
+
+    public void setPressure(Integer pressure) {
+        this.pressure = pressure;
+    }
+
+    public Double getWindSpeed() {
+        return windSpeed;
+    }
+
+    public void setWindSpeed(Double windSpeed) {
+        this.windSpeed = windSpeed;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+}
+
+================================================================================
+
+
+================================================================================
+FILE: src/main/java/com/example/weather/exception/PincodeNotFoundException.java
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 348 B
+Extension: .java
+Language: java
+Location: src/main/java/com/example/weather/exception/PincodeNotFoundException.java
+Relative Path: src/main/java/com/example/weather/exception
+Created: 2026-09-06 17:03:47 (Asia/Calcutta / GMT+06:30)
+Modified: 2026-09-06 17:07:53 (Asia/Calcutta / GMT+06:30)
+MD5: cc042a165840936ac4b36de772994fcf
+SHA256: 98b4ca582c877d4b7cbdc64ee9bdbd699028aa2fd840fef9423e1c640d434bd6
+Encoding: ASCII
+
+FILE CONTENT:
+----------------------------------------
+package com.example.weather.exception;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ResponseStatus;
+
+@ResponseStatus(HttpStatus.NOT_FOUND)
+public class PincodeNotFoundException extends RuntimeException {
+    public PincodeNotFoundException(String message) {
+        super(message);
+    }
+}
+
+================================================================================
+
+
+================================================================================
+FILE: src/main/java/com/example/weather/exception/UpstreamServiceException.java
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 463 B
+Extension: .java
+Language: java
+Location: src/main/java/com/example/weather/exception/UpstreamServiceException.java
+Relative Path: src/main/java/com/example/weather/exception
+Created: 2026-09-06 17:03:51 (Asia/Calcutta / GMT+06:30)
+Modified: 2026-09-06 17:07:53 (Asia/Calcutta / GMT+06:30)
+MD5: 31ead3a7ee6eae2065a17535d49e7c5b
+SHA256: 7e92e340d605cc828e8a7a03a2a026bc1202bb0f669cd1950533ddbd4cfa3808
+Encoding: ASCII
+
+FILE CONTENT:
+----------------------------------------
+package com.example.weather.exception;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ResponseStatus;
+
+@ResponseStatus(HttpStatus.BAD_GATEWAY)
+public class UpstreamServiceException extends RuntimeException {
+    public UpstreamServiceException(String message) {
+        super(message);
+    }
+
+    public UpstreamServiceException(String message, Throwable cause) {
+        super(message, cause);
+    }
+}
+
+================================================================================
+
+
+================================================================================
+FILE: src/main/java/com/example/weather/model/Location.java
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 1.6 KB
+Extension: .java
+Language: java
+Location: src/main/java/com/example/weather/model/Location.java
+Relative Path: src/main/java/com/example/weather/model
+Created: 2026-09-06 14:45:28 (Asia/Calcutta / GMT+06:30)
+Modified: 2026-09-07 08:51:47 (Asia/Calcutta / GMT+06:30)
+MD5: 215ef1b4f82f821aa1093426e57ff3e1
+SHA256: 6ddec2bea0a7afe822582957ddd83486d62d334d66e21b680d5159a53a5177bf
+Encoding: ASCII
+
+FILE CONTENT:
+----------------------------------------
+package com.example.weather.model;
+
+import jakarta.persistence.*;
+import java.time.OffsetDateTime;
+
+@Entity
+@Table(name = "locations")
+public class Location {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false, unique = true)
+    private String pincode;
+
+    private Double latitude;
+    private Double longitude;
+
+    private String placeName;
+
+    private String source;
+
+    private OffsetDateTime createdAt;
+
+    // getters and setters
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getPincode() {
+        return pincode;
+    }
+
+    public void setPincode(String pincode) {
+        this.pincode = pincode;
+    }
+
+    public Double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(Double latitude) {
+        this.latitude = latitude;
+    }
+
+    public Double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(Double longitude) {
+        this.longitude = longitude;
+    }
+
+    public String getPlaceName() {
+        return placeName;
+    }
+
+    public void setPlaceName(String placeName) {
+        this.placeName = placeName;
+    }
+
+    public String getSource() {
+        return source;
+    }
+
+    public void setSource(String source) {
+        this.source = source;
+    }
+
+    public OffsetDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(OffsetDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+}
+
+================================================================================
+
+
+================================================================================
+FILE: src/main/java/com/example/weather/model/WeatherRecord.java
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 2.42 KB
+Extension: .java
+Language: java
+Location: src/main/java/com/example/weather/model/WeatherRecord.java
+Relative Path: src/main/java/com/example/weather/model
+Created: 2026-09-06 14:45:38 (Asia/Calcutta / GMT+06:30)
+Modified: 2026-09-06 14:46:28 (Asia/Calcutta / GMT+06:30)
+MD5: e8bbea6db2cf4e34b79e911334b23c87
+SHA256: 864469d40a10623c8df2446626379a9d351522a98c2548932aa524aacc31ce09
+Encoding: ASCII
+
+FILE CONTENT:
+----------------------------------------
+package com.example.weather.model;
+
+import jakarta.persistence.*;
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
+
+@Entity
+@Table(name = "weather_records", uniqueConstraints = {@UniqueConstraint(columnNames = {"location_id", "date"})})
+public class WeatherRecord {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "location_id")
+    private Location location;
+
+    private LocalDate date;
+
+    @Column(columnDefinition = "text")
+    private String rawPayload;
+
+    private Double temperatureC;
+    private Integer humidity;
+    private Integer pressure;
+    private Double windSpeed;
+    private String description;
+
+    private OffsetDateTime fetchedAt;
+
+    // getters and setters
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+
+    public String getRawPayload() {
+        return rawPayload;
+    }
+
+    public void setRawPayload(String rawPayload) {
+        this.rawPayload = rawPayload;
+    }
+
+    public Double getTemperatureC() {
+        return temperatureC;
+    }
+
+    public void setTemperatureC(Double temperatureC) {
+        this.temperatureC = temperatureC;
+    }
+
+    public Integer getHumidity() {
+        return humidity;
+    }
+
+    public void setHumidity(Integer humidity) {
+        this.humidity = humidity;
+    }
+
+    public Integer getPressure() {
+        return pressure;
+    }
+
+    public void setPressure(Integer pressure) {
+        this.pressure = pressure;
+    }
+
+    public Double getWindSpeed() {
+        return windSpeed;
+    }
+
+    public void setWindSpeed(Double windSpeed) {
+        this.windSpeed = windSpeed;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public OffsetDateTime getFetchedAt() {
+        return fetchedAt;
+    }
+
+    public void setFetchedAt(OffsetDateTime fetchedAt) {
+        this.fetchedAt = fetchedAt;
+    }
+}
+
+================================================================================
+
+
+================================================================================
+FILE: src/main/java/com/example/weather/repository/LocationRepository.java
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 315 B
+Extension: .java
+Language: java
+Location: src/main/java/com/example/weather/repository/LocationRepository.java
+Relative Path: src/main/java/com/example/weather/repository
+Created: 2026-09-06 14:45:40 (Asia/Calcutta / GMT+06:30)
+Modified: 2026-09-06 14:46:28 (Asia/Calcutta / GMT+06:30)
+MD5: 2647a5f58210d98096eb6d43bdcb0686
+SHA256: 19a50b264268183238eb034384c433e1d47924135518930beae4a93af590373b
+Encoding: ASCII
+
+FILE CONTENT:
+----------------------------------------
+package com.example.weather.repository;
+
+import com.example.weather.model.Location;
+import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.Optional;
+
+public interface LocationRepository extends JpaRepository<Location, Long> {
+    Optional<Location> findByPincode(String pincode);
+}
+
+================================================================================
+
+
+================================================================================
+FILE: src/main/java/com/example/weather/repository/WeatherRecordRepository.java
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 437 B
+Extension: .java
+Language: java
+Location: src/main/java/com/example/weather/repository/WeatherRecordRepository.java
+Relative Path: src/main/java/com/example/weather/repository
+Created: 2026-09-06 14:45:43 (Asia/Calcutta / GMT+06:30)
+Modified: 2026-09-06 14:46:28 (Asia/Calcutta / GMT+06:30)
+MD5: c54d457b287228b5440b23e02cca1018
+SHA256: 949b2ee69288a2557d2d67ce6883f85ed07994f792c54657764a996afc0138b9
+Encoding: ASCII
+
+FILE CONTENT:
+----------------------------------------
+package com.example.weather.repository;
+
+import com.example.weather.model.Location;
+import com.example.weather.model.WeatherRecord;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.time.LocalDate;
+import java.util.Optional;
+
+public interface WeatherRecordRepository extends JpaRepository<WeatherRecord, Long> {
+    Optional<WeatherRecord> findByLocationAndDate(Location location, LocalDate date);
+}
+
+================================================================================
+
+
+================================================================================
+FILE: src/main/java/com/example/weather/service/impl/WeatherServiceImpl.java
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 6.1 KB
+Extension: .java
+Language: java
+Location: src/main/java/com/example/weather/service/impl/WeatherServiceImpl.java
+Relative Path: src/main/java/com/example/weather/service/impl
+Created: 2026-09-06 17:11:57 (Asia/Calcutta / GMT+06:30)
+Modified: 2026-09-06 17:28:23 (Asia/Calcutta / GMT+06:30)
+MD5: 7a155b3ae4db5ba5f04e6720c5cc1024
+SHA256: b6f7c2c94d62ac00ade6df94466698b0b53eeef9871dbd0966905737ad939d96
+Encoding: ASCII
+
+FILE CONTENT:
+----------------------------------------
+package com.example.weather.service.impl;
+
+import com.example.weather.adapters.GeocodeResult;
+import com.example.weather.adapters.OpenWeatherClient;
+import com.example.weather.dto.WeatherResponse;
+import com.example.weather.exception.UpstreamServiceException;
+import com.example.weather.model.Location;
+import com.example.weather.model.WeatherRecord;
+import com.example.weather.repository.LocationRepository;
+import com.example.weather.repository.WeatherRecordRepository;
+import com.example.weather.service.WeatherService;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.stereotype.Service;
+
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
+
+@Service
+public class WeatherServiceImpl implements WeatherService {
+
+    private final LocationRepository locationRepository;
+    private final WeatherRecordRepository weatherRecordRepository;
+    private final OpenWeatherClient openWeatherClient;
+    private final ObjectMapper objectMapper;
+
+    public WeatherServiceImpl(LocationRepository locationRepository,
+                              WeatherRecordRepository weatherRecordRepository,
+                              OpenWeatherClient openWeatherClient,
+                              ObjectMapper objectMapper) {
+        this.locationRepository = locationRepository;
+        this.weatherRecordRepository = weatherRecordRepository;
+        this.openWeatherClient = openWeatherClient;
+        this.objectMapper = objectMapper;
+    }
+
+    @Override
+    public WeatherResponse getWeather(String pincode, LocalDate forDate) {
+        // 1. Lookup or create Location
+        Location loc = locationRepository.findByPincode(pincode).orElse(null);
+        if (loc == null) {
+            GeocodeResult geo = openWeatherClient.geocodeByPincode(pincode);
+            Location toSave = new Location();
+            toSave.setPincode(pincode);
+            toSave.setLatitude(geo.getLatitude());
+            toSave.setLongitude(geo.getLongitude());
+            toSave.setPlaceName(geo.getName());
+            toSave.setSource("openweather");
+            toSave.setCreatedAt(OffsetDateTime.now());
+            try {
+                loc = locationRepository.saveAndFlush(toSave);
+            } catch (DataIntegrityViolationException dive) {
+                // concurrent insert, re-read
+                loc = locationRepository.findByPincode(pincode).orElseThrow(() -> new UpstreamServiceException("Failed to persist or read location"));
+            }
+        } else {
+            // ensure placeName is populated if missing
+            if ((loc.getPlaceName() == null || loc.getPlaceName().isBlank())) {
+                try {
+                    GeocodeResult geo = openWeatherClient.geocodeByPincode(pincode);
+                    loc.setPlaceName(geo.getName());
+                    try {
+                        locationRepository.saveAndFlush(loc);
+                    } catch (DataIntegrityViolationException ignore) {
+                        // ignore concurrent update
+                    }
+                } catch (Exception ignored) {
+                    // non-fatal; proceed
+                }
+            }
+        }
+
+        // 2. Lookup or create WeatherRecord
+        var existing = weatherRecordRepository.findByLocationAndDate(loc, forDate);
+        WeatherRecord record = existing.orElse(null);
+        if (record == null) {
+            String raw;
+            if (forDate.equals(LocalDate.now())) {
+                raw = openWeatherClient.getCurrentWeather(loc.getLatitude(), loc.getLongitude());
+            } else {
+                long unixTs = forDate.atStartOfDay(java.time.ZoneOffset.UTC).toEpochSecond();
+                raw = openWeatherClient.getHistoricalWeather(loc.getLatitude(), loc.getLongitude(), unixTs);
+            }
+
+            try {
+                JsonNode root = objectMapper.readTree(raw);
+                double temp = root.path("main").path("temp").asDouble();
+                int humidity = root.path("main").path("humidity").asInt();
+                int pressure = root.path("main").path("pressure").asInt();
+                double wind = root.path("wind").path("speed").asDouble();
+                String desc = null;
+                if (root.path("weather").isArray() && root.path("weather").size() > 0) {
+                    desc = root.path("weather").get(0).path("description").asText(null);
+                }
+
+                WeatherRecord wr = new WeatherRecord();
+                wr.setLocation(loc);
+                wr.setDate(forDate);
+                wr.setRawPayload(raw);
+                wr.setTemperatureC(temp);
+                wr.setHumidity(humidity);
+                wr.setPressure(pressure);
+                wr.setWindSpeed(wind);
+                wr.setDescription(desc);
+                wr.setFetchedAt(OffsetDateTime.now());
+                try {
+                    record = weatherRecordRepository.saveAndFlush(wr);
+                } catch (DataIntegrityViolationException dive) {
+                    // concurrent insert; re-read existing
+                    record = weatherRecordRepository.findByLocationAndDate(loc, forDate).orElseThrow(() -> new UpstreamServiceException("Failed to persist or read weather record"));
+                }
+            } catch (UpstreamServiceException use) {
+                throw use;
+            } catch (Exception e) {
+                throw new UpstreamServiceException("Failed to parse weather response", e);
+            }
+        }
+
+        // 3. Build response using place name
+        WeatherResponse resp = new WeatherResponse();
+        resp.setPincode(pincode);
+        resp.setPlace(loc.getPlaceName() == null ? loc.getPincode() : loc.getPlaceName());
+        resp.setDate(forDate);
+        resp.setTemperature(record.getTemperatureC());
+        resp.setHumidity(record.getHumidity());
+        resp.setPressure(record.getPressure());
+        resp.setWindSpeed(record.getWindSpeed());
+        resp.setDescription(record.getDescription());
+
+        return resp;
+    }
+}
+
+================================================================================
+
+
+================================================================================
+FILE: src/main/java/com/example/weather/service/WeatherService.java
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 228 B
+Extension: .java
+Language: java
+Location: src/main/java/com/example/weather/service/WeatherService.java
+Relative Path: src/main/java/com/example/weather/service
+Created: 2026-09-06 14:45:46 (Asia/Calcutta / GMT+06:30)
+Modified: 2026-09-06 14:46:28 (Asia/Calcutta / GMT+06:30)
+MD5: 8f102b5e37f14e7bd36a3fc78b92f37b
+SHA256: e5e8cf4ce7174be7a08fae5d2d1ecf009566f0ae17f26a97d91a14389f6046b7
+Encoding: ASCII
+
+FILE CONTENT:
+----------------------------------------
+package com.example.weather.service;
+
+import com.example.weather.dto.WeatherResponse;
+
+import java.time.LocalDate;
+
+public interface WeatherService {
+    WeatherResponse getWeather(String pincode, LocalDate forDate);
+}
+
+================================================================================
+
+
+================================================================================
+FILE: src/main/java/com/example/weather/WeatherServiceApplication.java
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 349 B
+Extension: .java
+Language: java
+Location: src/main/java/com/example/weather/WeatherServiceApplication.java
+Relative Path: src/main/java/com/example/weather
+Created: 2026-09-06 14:44:46 (Asia/Calcutta / GMT+06:30)
+Modified: 2026-09-06 17:51:00 (Asia/Calcutta / GMT+06:30)
+MD5: 1e237dc291d04de139b54c863c20b8d2
+SHA256: 8bdabdbabe02f2ec43f80eae33bdd4e8c3fed342e94b41be0e89c864adcb9894
+Encoding: ASCII
+
+FILE CONTENT:
+----------------------------------------
+package com.example.weather;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class WeatherServiceApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(WeatherServiceApplication.class, args);
+    }
+}
+
+================================================================================
+
+
+================================================================================
+FILE: src/main/resources/application.yml
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 468 B
+Extension: .yml
+Language: yaml
+Location: src/main/resources/application.yml
+Relative Path: src/main/resources
+Created: 2026-09-06 14:46:01 (Asia/Calcutta / GMT+06:30)
+Modified: 2026-09-06 17:44:52 (Asia/Calcutta / GMT+06:30)
+MD5: 45ff3c432250d71265fdbf88dcfa387b
+SHA256: da6c25d99362ad05ad335063e02419a1a66c924f3f8cc7d8e69cc3b75c04ec1d
+Encoding: ASCII
+
+FILE CONTENT:
+----------------------------------------
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/weatherdb?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:root}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+
+server:
+  port: 8080
+
+logging:
+  level:
+    root: INFO
+
+openweather:
+  apiKey: ${OPENWEATHER_API_KEY:}
+  defaultCountry: IN
+
+================================================================================
+
+
+================================================================================
+FILE: src/test/java/com/example/weather/adapters/OpenWeatherClientImplTest.java
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 3.26 KB
+Extension: .java
+Language: java
+Location: src/test/java/com/example/weather/adapters/OpenWeatherClientImplTest.java
+Relative Path: src/test/java/com/example/weather/adapters
+Created: 2026-09-06 14:50:49 (Asia/Calcutta / GMT+06:30)
+Modified: 2026-09-06 17:28:23 (Asia/Calcutta / GMT+06:30)
+MD5: de572655a5934dacc55987c5ecd97299
+SHA256: 7ad7eadb985dfce8dbf6a86f9edd991269053c5984c36a20483317cf2c5805e1
+Encoding: ASCII
+
+FILE CONTENT:
+----------------------------------------
+package com.example.weather.adapters;
+
+import com.example.weather.adapters.impl.OpenWeatherClientImpl;
+import com.example.weather.config.OpenWeatherProperties;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.web.client.RestTemplate;
+import org.springframework.test.web.client.MockRestServiceServer;
+
+import static org.springframework.test.web.client.match.MockRestRequestMatchers.requestTo;
+import static org.springframework.test.web.client.response.MockRestResponseCreators.withSuccess;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.springframework.test.web.client.match.MockRestRequestMatchers.method;
+import static org.springframework.http.HttpMethod.GET;
+
+public class OpenWeatherClientImplTest {
+
+    private RestTemplate restTemplate;
+    private OpenWeatherProperties properties;
+    private ObjectMapper mapper;
+    private OpenWeatherClientImpl client;
+    private MockRestServiceServer mockServer;
+
+    @BeforeEach
+    public void setup() {
+        restTemplate = new RestTemplate();
+        mockServer = MockRestServiceServer.createServer(restTemplate);
+        properties = new OpenWeatherProperties();
+        properties.setApiKey("testkey");
+        mapper = new ObjectMapper();
+        client = new OpenWeatherClientImpl(restTemplate, properties, mapper);
+    }
+
+    @Test
+    public void geocodeByPincode_parsesResponse() throws Exception {
+        String body = "{ \"zip\": \"411014,IN\", \"name\": \"Pune\", \"lat\": 18.5, \"lon\": 73.8 }";
+        mockServer.expect(requestTo(org.hamcrest.Matchers.containsString("geo/1.0/zip")))
+            .andExpect(method(GET))
+            .andRespond(withSuccess(body, MediaType.APPLICATION_JSON));
+
+        GeocodeResult res = client.geocodeByPincode("411014");
+        assertThat(res).isNotNull();
+        assertThat(res.getLatitude()).isEqualTo(18.5);
+        assertThat(res.getLongitude()).isEqualTo(73.8);
+        assertThat(res.getName()).isEqualTo("Pune");
+        mockServer.verify();
+    }
+
+    @Test
+    public void getCurrentWeather_returnsRawBody() throws Exception {
+        String body = "{ \"weather\": [{\"description\": \"clear sky\"}], \"main\": {\"temp\": 25.3} }";
+        mockServer.expect(requestTo(org.hamcrest.Matchers.containsString("data/2.5/weather")))
+            .andExpect(method(GET))
+            .andRespond(withSuccess(body, MediaType.APPLICATION_JSON));
+
+        String raw = client.getCurrentWeather(18.5, 73.8);
+        assertThat(raw).contains("clear sky");
+        mockServer.verify();
+    }
+
+    @Test
+    public void getHistoricalWeather_returnsRawBody() throws Exception {
+        String body = "{ \"current\": { \"weather\": [{\"description\": \"fog\"}], \"temp\": 20.0 } }";
+        mockServer.expect(requestTo(org.hamcrest.Matchers.containsString("onecall/timemachine")))
+            .andExpect(method(GET))
+            .andRespond(withSuccess(body, MediaType.APPLICATION_JSON));
+
+        String raw = client.getHistoricalWeather(18.5, 73.8, 1602720000L);
+        assertThat(raw).contains("fog");
+        mockServer.verify();
+    }
+}
+
+================================================================================
+
+
+================================================================================
+FILE: src/test/java/com/example/weather/service/WeatherServiceImplTest.java
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 4.23 KB
+Extension: .java
+Language: java
+Location: src/test/java/com/example/weather/service/WeatherServiceImplTest.java
+Relative Path: src/test/java/com/example/weather/service
+Created: 2026-09-06 14:51:07 (Asia/Calcutta / GMT+06:30)
+Modified: 2026-09-06 17:28:23 (Asia/Calcutta / GMT+06:30)
+MD5: 5030c2912f3c2089edd75b639e59eab1
+SHA256: 271a50b6645ff39a4bb17a793b0f73cc3c508bcb11d7047a20ab5ae2510afd22
+Encoding: ASCII
+
+FILE CONTENT:
+----------------------------------------
+package com.example.weather.service;
+
+import com.example.weather.adapters.GeocodeResult;
+import com.example.weather.adapters.OpenWeatherClient;
+import com.example.weather.dto.WeatherResponse;
+import com.example.weather.model.Location;
+import com.example.weather.model.WeatherRecord;
+import com.example.weather.repository.LocationRepository;
+import com.example.weather.repository.WeatherRecordRepository;
+import com.example.weather.service.impl.WeatherServiceImpl;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
+import java.util.Optional;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.*;
+
+public class WeatherServiceImplTest {
+
+    private LocationRepository locationRepository;
+    private WeatherRecordRepository weatherRecordRepository;
+    private OpenWeatherClient openWeatherClient;
+    private ObjectMapper objectMapper;
+    // no redis lock service in this assignment
+    private WeatherServiceImpl service;
+
+    @BeforeEach
+    public void setup() {
+        locationRepository = mock(LocationRepository.class);
+        weatherRecordRepository = mock(WeatherRecordRepository.class);
+        openWeatherClient = mock(OpenWeatherClient.class);
+        objectMapper = new ObjectMapper();
+
+        service = new com.example.weather.service.impl.WeatherServiceImpl(locationRepository, weatherRecordRepository, openWeatherClient, objectMapper);
+    }
+
+    @Test
+    public void when_location_missing_geocode_and_save() {
+        when(locationRepository.findByPincode("411014")).thenReturn(Optional.empty());
+        when(openWeatherClient.geocodeByPincode("411014")).thenReturn(new GeocodeResult(18.5,73.8,"Pune"));
+        Location savedLoc = new Location();
+        savedLoc.setId(1L);
+        savedLoc.setPincode("411014");
+        savedLoc.setLatitude(18.5);
+        savedLoc.setLongitude(73.8);
+        when(locationRepository.saveAndFlush(any(Location.class))).thenReturn(savedLoc);
+        // No weather record exists
+        when(weatherRecordRepository.findByLocationAndDate(any(Location.class), any(LocalDate.class))).thenReturn(Optional.empty());
+        when(openWeatherClient.getCurrentWeather(18.5,73.8)).thenReturn("{ \"weather\": [{\"description\": \"clear\"}], \"main\": {\"temp\": 25, \"humidity\": 50, \"pressure\": 1012}, \"wind\": {\"speed\": 1.2} }");
+        when(weatherRecordRepository.saveAndFlush(any(WeatherRecord.class))).thenAnswer(inv -> inv.getArgument(0));
+
+        WeatherResponse resp = service.getWeather("411014", LocalDate.now());
+        assertThat(resp).isNotNull();
+        assertThat(resp.getPincode()).isEqualTo("411014");
+        verify(openWeatherClient).geocodeByPincode("411014");
+        verify(openWeatherClient).getCurrentWeather(18.5,73.8);
+    }
+
+    @Test
+    public void when_save_conflict_on_weather_then_reread() {
+        Location loc = new Location();
+        loc.setId(1L);
+        loc.setPincode("411014");
+        loc.setLatitude(18.5);
+        loc.setLongitude(73.8);
+        when(locationRepository.findByPincode("411014")).thenReturn(Optional.of(loc));
+        when(weatherRecordRepository.findByLocationAndDate(loc, LocalDate.now())).thenReturn(Optional.empty());
+        when(openWeatherClient.getCurrentWeather(18.5,73.8)).thenReturn("{ \"weather\": [{\"description\": \"clear\"}], \"main\": {\"temp\": 25, \"humidity\": 50, \"pressure\": 1012}, \"wind\": {\"speed\": 1.2} }");
+
+        WeatherRecord existing = new WeatherRecord();
+        existing.setId(10L);
+        existing.setLocation(loc);
+        existing.setDate(LocalDate.now());
+        existing.setTemperatureC(25.0);
+        when(weatherRecordRepository.saveAndFlush(any(WeatherRecord.class))).thenThrow(new org.springframework.dao.DataIntegrityViolationException("duplicate"));
+        when(weatherRecordRepository.findByLocationAndDate(loc, LocalDate.now())).thenReturn(Optional.of(existing));
+
+        WeatherResponse resp = service.getWeather("411014", LocalDate.now());
+        assertThat(resp).isNotNull();
+        assertThat(resp.getTemperature()).isEqualTo(25.0);
+    }
+}
+
+================================================================================
+
+
+================================================================================
+FILE: src/test/java/com/example/weather/WeatherControllerTest.java
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 1.77 KB
+Extension: .java
+Language: java
+Location: src/test/java/com/example/weather/WeatherControllerTest.java
+Relative Path: src/test/java/com/example/weather
+Created: 2026-09-06 14:46:20 (Asia/Calcutta / GMT+06:30)
+Modified: 2026-09-06 17:28:23 (Asia/Calcutta / GMT+06:30)
+MD5: 882ff7da63b92d78624d338d3627d8b1
+SHA256: 2586edc30de8762c638a30cd4ad9333889f62f473c9b60a16956820d29afa35a
+Encoding: ASCII
+
+FILE CONTENT:
+----------------------------------------
+package com.example.weather;
+
+import com.example.weather.adapters.GeocodeResult;
+import com.example.weather.adapters.OpenWeatherClient;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.web.client.TestRestTemplate;
+import org.springframework.boot.test.web.server.LocalServerPort;
+import org.springframework.http.ResponseEntity;
+import org.springframework.boot.test.mock.mockito.MockBean;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.ArgumentMatchers.anyDouble;
+import static org.mockito.Mockito.when;
+
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+public class WeatherControllerTest {
+
+    @LocalServerPort
+    private int port;
+
+    @Autowired
+    private TestRestTemplate restTemplate;
+
+    @MockBean
+    private OpenWeatherClient openWeatherClient;
+
+    @Test
+    public void smokeTestEndpoint_get() {
+        when(openWeatherClient.geocodeByPincode("411014"))
+                .thenReturn(new GeocodeResult(18.5, 73.8, "Pune"));
+        when(openWeatherClient.getCurrentWeather(anyDouble(), anyDouble()))
+                .thenReturn("{\"weather\":[{\"description\":\"clear sky\"}],\"main\":{\"temp\":25.0,\"humidity\":60,\"pressure\":1012},\"wind\":{\"speed\":1.5}}");
+
+        String url = "http://localhost:" + port + "/api/v1/weather?pincode=411014&for_date=" + java.time.LocalDate.now().toString();
+        ResponseEntity<String> resp = restTemplate.getForEntity(url, String.class);
+        assertThat(resp.getStatusCode().is2xxSuccessful())
+            .as("status=%s body=%s", resp.getStatusCode(), resp.getBody())
+            .isTrue();
+    }
+}
+
+================================================================================
+
+
+================================================================================
+FILE: src/test/resources/application.yml
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 214 B
+Extension: .yml
+Language: yaml
+Location: src/test/resources/application.yml
+Relative Path: src/test/resources
+Created: 2026-09-06 17:43:33 (Asia/Calcutta / GMT+06:30)
+Modified: 2026-09-06 17:44:52 (Asia/Calcutta / GMT+06:30)
+MD5: d94bd044055d2b2254d2ad1d68c0ca68
+SHA256: d60b5a8f668d853bd13f923fe0c36b3f9cae45da76f1483646e4f0ef385d1ff1
+Encoding: ASCII
+
+FILE CONTENT:
+----------------------------------------
+spring:
+  datasource:
+    url: jdbc:h2:mem:weatherdb-test;DB_CLOSE_DELAY=-1;MODE=MySQL
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+
+================================================================================
+
+
+================================================================================
+BINARY/EXCLUDED FILES (not included in text content)
+================================================================================
+- target/classes/com/example/weather/adapters/impl/OpenWeatherClientImpl.class
+
+
+================================================================================
+BINARY/EXCLUDED FILES (not included in text content)
+================================================================================
+- target/classes/com/example/weather/adapters/GeocodeResult.class
+- target/classes/com/example/weather/adapters/OpenWeatherClient.class
+
+
+================================================================================
+BINARY/EXCLUDED FILES (not included in text content)
+================================================================================
+- target/classes/com/example/weather/api/GlobalExceptionHandler.class
+- target/classes/com/example/weather/api/WeatherController.class
+
+
+================================================================================
+BINARY/EXCLUDED FILES (not included in text content)
+================================================================================
+- target/classes/com/example/weather/config/OpenWeatherProperties.class
+- target/classes/com/example/weather/config/RestConfig.class
+
+
+================================================================================
+BINARY/EXCLUDED FILES (not included in text content)
+================================================================================
+- target/classes/com/example/weather/dto/WeatherResponse.class
+
+
+================================================================================
+BINARY/EXCLUDED FILES (not included in text content)
+================================================================================
+- target/classes/com/example/weather/exception/PincodeNotFoundException.class
+- target/classes/com/example/weather/exception/UpstreamServiceException.class
+
+
+================================================================================
+BINARY/EXCLUDED FILES (not included in text content)
+================================================================================
+- target/classes/com/example/weather/model/Location.class
+- target/classes/com/example/weather/model/WeatherRecord.class
+
+
+================================================================================
+BINARY/EXCLUDED FILES (not included in text content)
+================================================================================
+- target/classes/com/example/weather/repository/LocationRepository.class
+- target/classes/com/example/weather/repository/WeatherRecordRepository.class
+
+
+================================================================================
+BINARY/EXCLUDED FILES (not included in text content)
+================================================================================
+- target/classes/com/example/weather/service/impl/WeatherServiceImpl.class
+
+
+================================================================================
+BINARY/EXCLUDED FILES (not included in text content)
+================================================================================
+- target/classes/com/example/weather/service/WeatherService.class
+
+
+================================================================================
+BINARY/EXCLUDED FILES (not included in text content)
+================================================================================
+- target/classes/com/example/weather/WeatherServiceApplication.class
+
+
+================================================================================
+FILE: target/classes/application.yml
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 468 B
+Extension: .yml
+Language: yaml
+Location: target/classes/application.yml
+Relative Path: target/classes
+Created: 2026-09-07 09:11:08 (Asia/Calcutta / GMT+06:30)
+Modified: 2026-09-07 09:11:08 (Asia/Calcutta / GMT+06:30)
+MD5: 45ff3c432250d71265fdbf88dcfa387b
+SHA256: da6c25d99362ad05ad335063e02419a1a66c924f3f8cc7d8e69cc3b75c04ec1d
+Encoding: ASCII
+
+FILE CONTENT:
+----------------------------------------
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/weatherdb?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:root}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+
+server:
+  port: 8080
+
+logging:
+  level:
+    root: INFO
+
+openweather:
+  apiKey: ${OPENWEATHER_API_KEY:}
+  defaultCountry: IN
+
+================================================================================
+
+
+================================================================================
+BINARY/EXCLUDED FILES (not included in text content)
+================================================================================
+- target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
+- target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
+
+
+================================================================================
+BINARY/EXCLUDED FILES (not included in text content)
+================================================================================
+- target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst
+- target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst
+
+
+================================================================================
+FILE: target/surefire-reports/com.example.weather.adapters.OpenWeatherClientImplTest.txt
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 361 B
+Extension: .txt
+Language: text
+Location: target/surefire-reports/com.example.weather.adapters.OpenWeatherClientImplTest.txt
+Relative Path: target/surefire-reports
+Created: 2026-09-06 17:25:02 (Asia/Calcutta / GMT+06:30)
+Modified: 2026-09-07 09:22:04 (Asia/Calcutta / GMT+06:30)
+MD5: 5c6f5b8debb7d4fa7637097fa3bc1bb6
+SHA256: 5e02be44b216421ca0001eb291c6094f7e4a8ccac7f52172b7c03d9197f595f6
+Encoding: ASCII
+
+FILE CONTENT:
+----------------------------------------
+-------------------------------------------------------------------------------
+Test set: com.example.weather.adapters.OpenWeatherClientImplTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.286 s - in com.example.weather.adapters.OpenWeatherClientImplTest
+
+================================================================================
+
+
+================================================================================
+FILE: target/surefire-reports/com.example.weather.service.WeatherServiceImplTest.txt
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 353 B
+Extension: .txt
+Language: text
+Location: target/surefire-reports/com.example.weather.service.WeatherServiceImplTest.txt
+Relative Path: target/surefire-reports
+Created: 2026-09-06 17:25:03 (Asia/Calcutta / GMT+06:30)
+Modified: 2026-09-07 09:22:05 (Asia/Calcutta / GMT+06:30)
+MD5: 77b5439e25a786a8d6d4422bd9615a59
+SHA256: 35c55feb5f514f50e820fa396caeed18ebed86ee1301e1a970b1be5bc3cbacbe
+Encoding: ASCII
+
+FILE CONTENT:
+----------------------------------------
+-------------------------------------------------------------------------------
+Test set: com.example.weather.service.WeatherServiceImplTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.743 s - in com.example.weather.service.WeatherServiceImplTest
+
+================================================================================
+
+
+================================================================================
+FILE: target/surefire-reports/com.example.weather.WeatherControllerTest.txt
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 335 B
+Extension: .txt
+Language: text
+Location: target/surefire-reports/com.example.weather.WeatherControllerTest.txt
+Relative Path: target/surefire-reports
+Created: 2026-09-06 17:25:07 (Asia/Calcutta / GMT+06:30)
+Modified: 2026-09-07 09:22:09 (Asia/Calcutta / GMT+06:30)
+MD5: 359f77d4d8274df57c7cd2a41ed7c220
+SHA256: 938cd41703f9c38885a36819b77914bed381382045ce6ea717444181a152f0d8
+Encoding: ASCII
+
+FILE CONTENT:
+----------------------------------------
+-------------------------------------------------------------------------------
+Test set: com.example.weather.WeatherControllerTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.548 s - in com.example.weather.WeatherControllerTest
+
+================================================================================
+
+
+================================================================================
+FILE: target/surefire-reports/TEST-com.example.weather.adapters.OpenWeatherClientImplTest.xml
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 28.13 KB
+Extension: .xml
+Language: xml
+Location: target/surefire-reports/TEST-com.example.weather.adapters.OpenWeatherClientImplTest.xml
+Relative Path: target/surefire-reports
+Created: 2026-09-07 09:22:04 (Asia/Calcutta / GMT+06:30)
+Modified: 2026-09-07 09:22:04 (Asia/Calcutta / GMT+06:30)
+MD5: f061678e5b18b1689fc42773896f16c4
+SHA256: b94137e8a96d5a67bff3c3f3b1440e5e9bad4d7ccf2f52fcac548d80bc5ef93d
+Encoding: ASCII
+
+FILE CONTENT:
+----------------------------------------
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.example.weather.adapters.OpenWeatherClientImplTest" time="0.286" tests="3" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="26"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="D:\weather_info_assessment\target\test-classes;D:\weather_info_assessment\target\classes;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-starter-web\3.1.6\spring-boot-starter-web-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-starter\3.1.6\spring-boot-starter-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot\3.1.6\spring-boot-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\3.1.6\spring-boot-autoconfigure-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-starter-logging\3.1.6\spring-boot-starter-logging-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\ch\qos\logback\logback-classic\1.4.11\logback-classic-1.4.11.jar;C:\Users\Akshat Singh\.m2\repository\ch\qos\logback\logback-core\1.4.11\logback-core-1.4.11.jar;C:\Users\Akshat Singh\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.20.0\log4j-to-slf4j-2.20.0.jar;C:\Users\Akshat Singh\.m2\repository\org\apache\logging\log4j\log4j-api\2.20.0\log4j-api-2.20.0.jar;C:\Users\Akshat Singh\.m2\repository\org\slf4j\jul-to-slf4j\2.0.9\jul-to-slf4j-2.0.9.jar;C:\Users\Akshat Singh\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar;C:\Users\Akshat Singh\.m2\repository\org\yaml\snakeyaml\1.33\snakeyaml-1.33.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-starter-json\3.1.6\spring-boot-starter-json-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.15.3\jackson-databind-2.15.3.jar;C:\Users\Akshat Singh\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.15.3\jackson-annotations-2.15.3.jar;C:\Users\Akshat Singh\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.15.3\jackson-core-2.15.3.jar;C:\Users\Akshat Singh\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.15.3\jackson-datatype-jdk8-2.15.3.jar;C:\Users\Akshat Singh\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.15.3\jackson-datatype-jsr310-2.15.3.jar;C:\Users\Akshat Singh\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.15.3\jackson-module-parameter-names-2.15.3.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\3.1.6\spring-boot-starter-tomcat-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\10.1.16\tomcat-embed-core-10.1.16.jar;C:\Users\Akshat Singh\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\10.1.16\tomcat-embed-websocket-10.1.16.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-web\6.0.14\spring-web-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-beans\6.0.14\spring-beans-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\io\micrometer\micrometer-observation\1.11.6\micrometer-observation-1.11.6.jar;C:\Users\Akshat Singh\.m2\repository\io\micrometer\micrometer-commons\1.11.6\micrometer-commons-1.11.6.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-webmvc\6.0.14\spring-webmvc-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-aop\6.0.14\spring-aop-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-context\6.0.14\spring-context-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-expression\6.0.14\spring-expression-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\3.1.6\spring-boot-starter-data-jpa-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-starter-aop\3.1.6\spring-boot-starter-aop-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\aspectj\aspectjweaver\1.9.20.1\aspectjweaver-1.9.20.1.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\3.1.6\spring-boot-starter-jdbc-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\com\zaxxer\HikariCP\5.0.1\HikariCP-5.0.1.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-jdbc\6.0.14\spring-jdbc-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\hibernate\orm\hibernate-core\6.2.13.Final\hibernate-core-6.2.13.Final.jar;C:\Users\Akshat Singh\.m2\repository\jakarta\persistence\jakarta.persistence-api\3.1.0\jakarta.persistence-api-3.1.0.jar;C:\Users\Akshat Singh\.m2\repository\jakarta\transaction\jakarta.transaction-api\2.0.1\jakarta.transaction-api-2.0.1.jar;C:\Users\Akshat Singh\.m2\repository\org\jboss\logging\jboss-logging\3.5.3.Final\jboss-logging-3.5.3.Final.jar;C:\Users\Akshat Singh\.m2\repository\org\hibernate\common\hibernate-commons-annotations\6.0.6.Final\hibernate-commons-annotations-6.0.6.Final.jar;C:\Users\Akshat Singh\.m2\repository\io\smallrye\jandex\3.0.5\jandex-3.0.5.jar;C:\Users\Akshat Singh\.m2\repository\com\fasterxml\classmate\1.5.1\classmate-1.5.1.jar;C:\Users\Akshat Singh\.m2\repository\net\bytebuddy\byte-buddy\1.14.10\byte-buddy-1.14.10.jar;C:\Users\Akshat Singh\.m2\repository\org\glassfish\jaxb\jaxb-runtime\4.0.4\jaxb-runtime-4.0.4.jar;C:\Users\Akshat Singh\.m2\repository\org\glassfish\jaxb\jaxb-core\4.0.4\jaxb-core-4.0.4.jar;C:\Users\Akshat Singh\.m2\repository\org\eclipse\angus\angus-activation\2.0.1\angus-activation-2.0.1.jar;C:\Users\Akshat Singh\.m2\repository\org\glassfish\jaxb\txw2\4.0.4\txw2-4.0.4.jar;C:\Users\Akshat Singh\.m2\repository\com\sun\istack\istack-commons-runtime\4.1.2\istack-commons-runtime-4.1.2.jar;C:\Users\Akshat Singh\.m2\repository\jakarta\inject\jakarta.inject-api\2.0.1\jakarta.inject-api-2.0.1.jar;C:\Users\Akshat Singh\.m2\repository\org\antlr\antlr4-runtime\4.10.1\antlr4-runtime-4.10.1.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\data\spring-data-jpa\3.1.6\spring-data-jpa-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\data\spring-data-commons\3.1.6\spring-data-commons-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-orm\6.0.14\spring-orm-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-tx\6.0.14\spring-tx-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\slf4j\slf4j-api\2.0.9\slf4j-api-2.0.9.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-aspects\6.0.14\spring-aspects-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\com\h2database\h2\2.1.214\h2-2.1.214.jar;C:\Users\Akshat Singh\.m2\repository\com\mysql\mysql-connector-j\8.0.33\mysql-connector-j-8.0.33.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-starter-validation\3.1.6\spring-boot-starter-validation-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\10.1.16\tomcat-embed-el-10.1.16.jar;C:\Users\Akshat Singh\.m2\repository\org\hibernate\validator\hibernate-validator\8.0.1.Final\hibernate-validator-8.0.1.Final.jar;C:\Users\Akshat Singh\.m2\repository\jakarta\validation\jakarta.validation-api\3.0.2\jakarta.validation-api-3.0.2.jar;C:\Users\Akshat Singh\.m2\repository\org\springdoc\springdoc-openapi-starter-webmvc-ui\2.2.0\springdoc-openapi-starter-webmvc-ui-2.2.0.jar;C:\Users\Akshat Singh\.m2\repository\org\springdoc\springdoc-openapi-starter-webmvc-api\2.2.0\springdoc-openapi-starter-webmvc-api-2.2.0.jar;C:\Users\Akshat Singh\.m2\repository\org\springdoc\springdoc-openapi-starter-common\2.2.0\springdoc-openapi-starter-common-2.2.0.jar;C:\Users\Akshat Singh\.m2\repository\io\swagger\core\v3\swagger-core-jakarta\2.2.15\swagger-core-jakarta-2.2.15.jar;C:\Users\Akshat Singh\.m2\repository\org\apache\commons\commons-lang3\3.12.0\commons-lang3-3.12.0.jar;C:\Users\Akshat Singh\.m2\repository\io\swagger\core\v3\swagger-annotations-jakarta\2.2.15\swagger-annotations-jakarta-2.2.15.jar;C:\Users\Akshat Singh\.m2\repository\io\swagger\core\v3\swagger-models-jakarta\2.2.15\swagger-models-jakarta-2.2.15.jar;C:\Users\Akshat Singh\.m2\repository\com\fasterxml\jackson\dataformat\jackson-dataformat-yaml\2.15.3\jackson-dataformat-yaml-2.15.3.jar;C:\Users\Akshat Singh\.m2\repository\org\webjars\swagger-ui\5.2.0\swagger-ui-5.2.0.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-starter-test\3.1.6\spring-boot-starter-test-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-test\3.1.6\spring-boot-test-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-test-autoconfigure\3.1.6\spring-boot-test-autoconfigure-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\com\jayway\jsonpath\json-path\2.8.0\json-path-2.8.0.jar;C:\Users\Akshat Singh\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.1\jakarta.xml.bind-api-4.0.1.jar;C:\Users\Akshat Singh\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.2\jakarta.activation-api-2.1.2.jar;C:\Users\Akshat Singh\.m2\repository\net\minidev\json-smart\2.4.11\json-smart-2.4.11.jar;C:\Users\Akshat Singh\.m2\repository\net\minidev\accessors-smart\2.4.11\accessors-smart-2.4.11.jar;C:\Users\Akshat Singh\.m2\repository\org\ow2\asm\asm\9.3\asm-9.3.jar;C:\Users\Akshat Singh\.m2\repository\org\assertj\assertj-core\3.24.2\assertj-core-3.24.2.jar;C:\Users\Akshat Singh\.m2\repository\org\hamcrest\hamcrest\2.2\hamcrest-2.2.jar;C:\Users\Akshat Singh\.m2\repository\org\junit\jupiter\junit-jupiter\5.9.3\junit-jupiter-5.9.3.jar;C:\Users\Akshat Singh\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.3\junit-jupiter-api-5.9.3.jar;C:\Users\Akshat Singh\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\Akshat Singh\.m2\repository\org\junit\platform\junit-platform-commons\1.9.3\junit-platform-commons-1.9.3.jar;C:\Users\Akshat Singh\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Akshat Singh\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.9.3\junit-jupiter-params-5.9.3.jar;C:\Users\Akshat Singh\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.9.3\junit-jupiter-engine-5.9.3.jar;C:\Users\Akshat Singh\.m2\repository\org\junit\platform\junit-platform-engine\1.9.3\junit-platform-engine-1.9.3.jar;C:\Users\Akshat Singh\.m2\repository\org\mockito\mockito-core\5.3.1\mockito-core-5.3.1.jar;C:\Users\Akshat Singh\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.10\byte-buddy-agent-1.14.10.jar;C:\Users\Akshat Singh\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\Akshat Singh\.m2\repository\org\mockito\mockito-junit-jupiter\5.3.1\mockito-junit-jupiter-5.3.1.jar;C:\Users\Akshat Singh\.m2\repository\org\skyscreamer\jsonassert\1.5.1\jsonassert-1.5.1.jar;C:\Users\Akshat Singh\.m2\repository\com\vaadin\external\google\android-json\0.0.20131108.vaadin1\android-json-0.0.20131108.vaadin1.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-core\6.0.14\spring-core-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-jcl\6.0.14\spring-jcl-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-test\6.0.14\spring-test-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\xmlunit\xmlunit-core\2.9.1\xmlunit-core-2.9.1.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="Asia/Calcutta"/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="java.vm.specification.version" value="26"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="IN"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-26.0.1\bin"/>
+    <property name="sun.java.command" value="C:\Users\Akshat Singh\AppData\Local\Temp\surefire17381534575076126699\surefirebooter-20260907145204125_3.jar C:\Users\Akshat Singh\AppData\Local\Temp\surefire17381534575076126699 2026-09-07T14-52-04_013-jvmRun1 surefire-20260907145204125_1tmp surefire_0-20260907145204125_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="D:\weather_info_assessment\target\test-classes;D:\weather_info_assessment\target\classes;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-starter-web\3.1.6\spring-boot-starter-web-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-starter\3.1.6\spring-boot-starter-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot\3.1.6\spring-boot-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\3.1.6\spring-boot-autoconfigure-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-starter-logging\3.1.6\spring-boot-starter-logging-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\ch\qos\logback\logback-classic\1.4.11\logback-classic-1.4.11.jar;C:\Users\Akshat Singh\.m2\repository\ch\qos\logback\logback-core\1.4.11\logback-core-1.4.11.jar;C:\Users\Akshat Singh\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.20.0\log4j-to-slf4j-2.20.0.jar;C:\Users\Akshat Singh\.m2\repository\org\apache\logging\log4j\log4j-api\2.20.0\log4j-api-2.20.0.jar;C:\Users\Akshat Singh\.m2\repository\org\slf4j\jul-to-slf4j\2.0.9\jul-to-slf4j-2.0.9.jar;C:\Users\Akshat Singh\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar;C:\Users\Akshat Singh\.m2\repository\org\yaml\snakeyaml\1.33\snakeyaml-1.33.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-starter-json\3.1.6\spring-boot-starter-json-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.15.3\jackson-databind-2.15.3.jar;C:\Users\Akshat Singh\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.15.3\jackson-annotations-2.15.3.jar;C:\Users\Akshat Singh\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.15.3\jackson-core-2.15.3.jar;C:\Users\Akshat Singh\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.15.3\jackson-datatype-jdk8-2.15.3.jar;C:\Users\Akshat Singh\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.15.3\jackson-datatype-jsr310-2.15.3.jar;C:\Users\Akshat Singh\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.15.3\jackson-module-parameter-names-2.15.3.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\3.1.6\spring-boot-starter-tomcat-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\10.1.16\tomcat-embed-core-10.1.16.jar;C:\Users\Akshat Singh\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\10.1.16\tomcat-embed-websocket-10.1.16.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-web\6.0.14\spring-web-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-beans\6.0.14\spring-beans-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\io\micrometer\micrometer-observation\1.11.6\micrometer-observation-1.11.6.jar;C:\Users\Akshat Singh\.m2\repository\io\micrometer\micrometer-commons\1.11.6\micrometer-commons-1.11.6.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-webmvc\6.0.14\spring-webmvc-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-aop\6.0.14\spring-aop-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-context\6.0.14\spring-context-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-expression\6.0.14\spring-expression-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\3.1.6\spring-boot-starter-data-jpa-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-starter-aop\3.1.6\spring-boot-starter-aop-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\aspectj\aspectjweaver\1.9.20.1\aspectjweaver-1.9.20.1.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\3.1.6\spring-boot-starter-jdbc-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\com\zaxxer\HikariCP\5.0.1\HikariCP-5.0.1.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-jdbc\6.0.14\spring-jdbc-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\hibernate\orm\hibernate-core\6.2.13.Final\hibernate-core-6.2.13.Final.jar;C:\Users\Akshat Singh\.m2\repository\jakarta\persistence\jakarta.persistence-api\3.1.0\jakarta.persistence-api-3.1.0.jar;C:\Users\Akshat Singh\.m2\repository\jakarta\transaction\jakarta.transaction-api\2.0.1\jakarta.transaction-api-2.0.1.jar;C:\Users\Akshat Singh\.m2\repository\org\jboss\logging\jboss-logging\3.5.3.Final\jboss-logging-3.5.3.Final.jar;C:\Users\Akshat Singh\.m2\repository\org\hibernate\common\hibernate-commons-annotations\6.0.6.Final\hibernate-commons-annotations-6.0.6.Final.jar;C:\Users\Akshat Singh\.m2\repository\io\smallrye\jandex\3.0.5\jandex-3.0.5.jar;C:\Users\Akshat Singh\.m2\repository\com\fasterxml\classmate\1.5.1\classmate-1.5.1.jar;C:\Users\Akshat Singh\.m2\repository\net\bytebuddy\byte-buddy\1.14.10\byte-buddy-1.14.10.jar;C:\Users\Akshat Singh\.m2\repository\org\glassfish\jaxb\jaxb-runtime\4.0.4\jaxb-runtime-4.0.4.jar;C:\Users\Akshat Singh\.m2\repository\org\glassfish\jaxb\jaxb-core\4.0.4\jaxb-core-4.0.4.jar;C:\Users\Akshat Singh\.m2\repository\org\eclipse\angus\angus-activation\2.0.1\angus-activation-2.0.1.jar;C:\Users\Akshat Singh\.m2\repository\org\glassfish\jaxb\txw2\4.0.4\txw2-4.0.4.jar;C:\Users\Akshat Singh\.m2\repository\com\sun\istack\istack-commons-runtime\4.1.2\istack-commons-runtime-4.1.2.jar;C:\Users\Akshat Singh\.m2\repository\jakarta\inject\jakarta.inject-api\2.0.1\jakarta.inject-api-2.0.1.jar;C:\Users\Akshat Singh\.m2\repository\org\antlr\antlr4-runtime\4.10.1\antlr4-runtime-4.10.1.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\data\spring-data-jpa\3.1.6\spring-data-jpa-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\data\spring-data-commons\3.1.6\spring-data-commons-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-orm\6.0.14\spring-orm-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-tx\6.0.14\spring-tx-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\slf4j\slf4j-api\2.0.9\slf4j-api-2.0.9.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-aspects\6.0.14\spring-aspects-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\com\h2database\h2\2.1.214\h2-2.1.214.jar;C:\Users\Akshat Singh\.m2\repository\com\mysql\mysql-connector-j\8.0.33\mysql-connector-j-8.0.33.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-starter-validation\3.1.6\spring-boot-starter-validation-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\10.1.16\tomcat-embed-el-10.1.16.jar;C:\Users\Akshat Singh\.m2\repository\org\hibernate\validator\hibernate-validator\8.0.1.Final\hibernate-validator-8.0.1.Final.jar;C:\Users\Akshat Singh\.m2\repository\jakarta\validation\jakarta.validation-api\3.0.2\jakarta.validation-api-3.0.2.jar;C:\Users\Akshat Singh\.m2\repository\org\springdoc\springdoc-openapi-starter-webmvc-ui\2.2.0\springdoc-openapi-starter-webmvc-ui-2.2.0.jar;C:\Users\Akshat Singh\.m2\repository\org\springdoc\springdoc-openapi-starter-webmvc-api\2.2.0\springdoc-openapi-starter-webmvc-api-2.2.0.jar;C:\Users\Akshat Singh\.m2\repository\org\springdoc\springdoc-openapi-starter-common\2.2.0\springdoc-openapi-starter-common-2.2.0.jar;C:\Users\Akshat Singh\.m2\repository\io\swagger\core\v3\swagger-core-jakarta\2.2.15\swagger-core-jakarta-2.2.15.jar;C:\Users\Akshat Singh\.m2\repository\org\apache\commons\commons-lang3\3.12.0\commons-lang3-3.12.0.jar;C:\Users\Akshat Singh\.m2\repository\io\swagger\core\v3\swagger-annotations-jakarta\2.2.15\swagger-annotations-jakarta-2.2.15.jar;C:\Users\Akshat Singh\.m2\repository\io\swagger\core\v3\swagger-models-jakarta\2.2.15\swagger-models-jakarta-2.2.15.jar;C:\Users\Akshat Singh\.m2\repository\com\fasterxml\jackson\dataformat\jackson-dataformat-yaml\2.15.3\jackson-dataformat-yaml-2.15.3.jar;C:\Users\Akshat Singh\.m2\repository\org\webjars\swagger-ui\5.2.0\swagger-ui-5.2.0.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-starter-test\3.1.6\spring-boot-starter-test-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-test\3.1.6\spring-boot-test-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-test-autoconfigure\3.1.6\spring-boot-test-autoconfigure-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\com\jayway\jsonpath\json-path\2.8.0\json-path-2.8.0.jar;C:\Users\Akshat Singh\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.1\jakarta.xml.bind-api-4.0.1.jar;C:\Users\Akshat Singh\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.2\jakarta.activation-api-2.1.2.jar;C:\Users\Akshat Singh\.m2\repository\net\minidev\json-smart\2.4.11\json-smart-2.4.11.jar;C:\Users\Akshat Singh\.m2\repository\net\minidev\accessors-smart\2.4.11\accessors-smart-2.4.11.jar;C:\Users\Akshat Singh\.m2\repository\org\ow2\asm\asm\9.3\asm-9.3.jar;C:\Users\Akshat Singh\.m2\repository\org\assertj\assertj-core\3.24.2\assertj-core-3.24.2.jar;C:\Users\Akshat Singh\.m2\repository\org\hamcrest\hamcrest\2.2\hamcrest-2.2.jar;C:\Users\Akshat Singh\.m2\repository\org\junit\jupiter\junit-jupiter\5.9.3\junit-jupiter-5.9.3.jar;C:\Users\Akshat Singh\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.3\junit-jupiter-api-5.9.3.jar;C:\Users\Akshat Singh\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\Akshat Singh\.m2\repository\org\junit\platform\junit-platform-commons\1.9.3\junit-platform-commons-1.9.3.jar;C:\Users\Akshat Singh\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Akshat Singh\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.9.3\junit-jupiter-params-5.9.3.jar;C:\Users\Akshat Singh\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.9.3\junit-jupiter-engine-5.9.3.jar;C:\Users\Akshat Singh\.m2\repository\org\junit\platform\junit-platform-engine\1.9.3\junit-platform-engine-1.9.3.jar;C:\Users\Akshat Singh\.m2\repository\org\mockito\mockito-core\5.3.1\mockito-core-5.3.1.jar;C:\Users\Akshat Singh\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.10\byte-buddy-agent-1.14.10.jar;C:\Users\Akshat Singh\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\Akshat Singh\.m2\repository\org\mockito\mockito-junit-jupiter\5.3.1\mockito-junit-jupiter-5.3.1.jar;C:\Users\Akshat Singh\.m2\repository\org\skyscreamer\jsonassert\1.5.1\jsonassert-1.5.1.jar;C:\Users\Akshat Singh\.m2\repository\com\vaadin\external\google\android-json\0.0.20131108.vaadin1\android-json-0.0.20131108.vaadin1.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-core\6.0.14\spring-core-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-jcl\6.0.14\spring-jcl-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-test\6.0.14\spring-test-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\xmlunit\xmlunit-core\2.9.1\xmlunit-core-2.9.1.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\Akshat Singh"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2026-04-21"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk-26.0.1"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="D:\weather_info_assessment"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\Akshat Singh\AppData\Local\Temp\surefire17381534575076126699\surefirebooter-20260907145204125_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="26.0.1+8-34"/>
+    <property name="user.name" value="Akshat Singh"/>
+    <property name="stdout.encoding" value="Cp1252"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\Users\Akshat Singh\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\AKSHAT~1\AppData\Local\Temp\"/>
+    <property name="java.version" value="26.0.1"/>
+    <property name="user.dir" value="D:\weather_info_assessment"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-26.0.1\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Users\Akshat Singh\anaconda3;C:\Users\Akshat Singh\anaconda3\Library\mingw-w64\bin;C:\Users\Akshat Singh\anaconda3\Library\usr\bin;C:\Users\Akshat Singh\anaconda3\Library\bin;C:\Users\Akshat Singh\anaconda3\Scripts;C:\Users\Akshat Singh\anaconda3\bin;C:\Users\Akshat Singh\anaconda3\condabin;c:\Users\Akshat Singh\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\debugCommand;c:\Users\Akshat Singh\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\copilotCli;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files\nodejs;C:\Program Files\Git\cmd;C:\Program Files\Java\jdk-26.0.1\bin;C:\apache-maven-3.9.16\bin;C:\Users\Akshat Singh\AppData\Local\Programs\Python\Python310\Scripts;C:\Users\Akshat Singh\AppData\Local\Programs\Python\Python310;C:\Users\Akshat Singh\AppData\Local\Programs\Python\Python314\Scripts;C:\Users\Akshat Singh\AppData\Local\Programs\Python\Python314;C:\Users\Akshat Singh\.local\bin;C:\Users\Akshat Singh\AppData\Local\Microsoft\WindowsApps;C:\Users\Akshat Singh\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Akshat Singh\AppData\Roaming\npm;C:\Program Files\Git\bin;C:\Program Files\Git\cmd;C:\Users\Akshat Singh\AppData\Local\Programs\Antigravity\bin;C:\Users\Akshat Singh\AppData\Local\Programs\Antigravity IDE\bin;C:\Users\Akshat Singh\AppData\Local\Python\bin;C:\Users\Akshat Singh\AppData\Local\Programs\Ollama;c:\Users\Akshat Singh\.vscode\extensions\vscjava.vscode-java-debug-0.59.0\bundled\scripts\noConfigScripts;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="Cp1252"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="26.0.1+8-34"/>
+    <property name="stdin.encoding" value="Cp1252"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="70.0"/>
+  </properties>
+  <testcase name="getCurrentWeather_returnsRawBody" classname="com.example.weather.adapters.OpenWeatherClientImplTest" time="0.244"/>
+  <testcase name="getHistoricalWeather_returnsRawBody" classname="com.example.weather.adapters.OpenWeatherClientImplTest" time="0.003"/>
+  <testcase name="geocodeByPincode_parsesResponse" classname="com.example.weather.adapters.OpenWeatherClientImplTest" time="0.021"/>
+</testsuite>
+================================================================================
+
+
+================================================================================
+FILE: target/surefire-reports/TEST-com.example.weather.service.WeatherServiceImplTest.xml
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 28.51 KB
+Extension: .xml
+Language: xml
+Location: target/surefire-reports/TEST-com.example.weather.service.WeatherServiceImplTest.xml
+Relative Path: target/surefire-reports
+Created: 2026-09-07 09:22:05 (Asia/Calcutta / GMT+06:30)
+Modified: 2026-09-07 09:22:05 (Asia/Calcutta / GMT+06:30)
+MD5: 8402c156c4af5e4cfc68641b1364cefb
+SHA256: 05e43cac5d627c89f52424fefa92454aa8e28d6d6f3d95a633b3ec0a69e69762
+Encoding: ASCII
+
+FILE CONTENT:
+----------------------------------------
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.example.weather.service.WeatherServiceImplTest" time="0.743" tests="2" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="26"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="D:\weather_info_assessment\target\test-classes;D:\weather_info_assessment\target\classes;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-starter-web\3.1.6\spring-boot-starter-web-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-starter\3.1.6\spring-boot-starter-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot\3.1.6\spring-boot-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\3.1.6\spring-boot-autoconfigure-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-starter-logging\3.1.6\spring-boot-starter-logging-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\ch\qos\logback\logback-classic\1.4.11\logback-classic-1.4.11.jar;C:\Users\Akshat Singh\.m2\repository\ch\qos\logback\logback-core\1.4.11\logback-core-1.4.11.jar;C:\Users\Akshat Singh\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.20.0\log4j-to-slf4j-2.20.0.jar;C:\Users\Akshat Singh\.m2\repository\org\apache\logging\log4j\log4j-api\2.20.0\log4j-api-2.20.0.jar;C:\Users\Akshat Singh\.m2\repository\org\slf4j\jul-to-slf4j\2.0.9\jul-to-slf4j-2.0.9.jar;C:\Users\Akshat Singh\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar;C:\Users\Akshat Singh\.m2\repository\org\yaml\snakeyaml\1.33\snakeyaml-1.33.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-starter-json\3.1.6\spring-boot-starter-json-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.15.3\jackson-databind-2.15.3.jar;C:\Users\Akshat Singh\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.15.3\jackson-annotations-2.15.3.jar;C:\Users\Akshat Singh\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.15.3\jackson-core-2.15.3.jar;C:\Users\Akshat Singh\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.15.3\jackson-datatype-jdk8-2.15.3.jar;C:\Users\Akshat Singh\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.15.3\jackson-datatype-jsr310-2.15.3.jar;C:\Users\Akshat Singh\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.15.3\jackson-module-parameter-names-2.15.3.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\3.1.6\spring-boot-starter-tomcat-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\10.1.16\tomcat-embed-core-10.1.16.jar;C:\Users\Akshat Singh\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\10.1.16\tomcat-embed-websocket-10.1.16.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-web\6.0.14\spring-web-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-beans\6.0.14\spring-beans-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\io\micrometer\micrometer-observation\1.11.6\micrometer-observation-1.11.6.jar;C:\Users\Akshat Singh\.m2\repository\io\micrometer\micrometer-commons\1.11.6\micrometer-commons-1.11.6.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-webmvc\6.0.14\spring-webmvc-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-aop\6.0.14\spring-aop-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-context\6.0.14\spring-context-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-expression\6.0.14\spring-expression-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\3.1.6\spring-boot-starter-data-jpa-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-starter-aop\3.1.6\spring-boot-starter-aop-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\aspectj\aspectjweaver\1.9.20.1\aspectjweaver-1.9.20.1.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\3.1.6\spring-boot-starter-jdbc-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\com\zaxxer\HikariCP\5.0.1\HikariCP-5.0.1.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-jdbc\6.0.14\spring-jdbc-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\hibernate\orm\hibernate-core\6.2.13.Final\hibernate-core-6.2.13.Final.jar;C:\Users\Akshat Singh\.m2\repository\jakarta\persistence\jakarta.persistence-api\3.1.0\jakarta.persistence-api-3.1.0.jar;C:\Users\Akshat Singh\.m2\repository\jakarta\transaction\jakarta.transaction-api\2.0.1\jakarta.transaction-api-2.0.1.jar;C:\Users\Akshat Singh\.m2\repository\org\jboss\logging\jboss-logging\3.5.3.Final\jboss-logging-3.5.3.Final.jar;C:\Users\Akshat Singh\.m2\repository\org\hibernate\common\hibernate-commons-annotations\6.0.6.Final\hibernate-commons-annotations-6.0.6.Final.jar;C:\Users\Akshat Singh\.m2\repository\io\smallrye\jandex\3.0.5\jandex-3.0.5.jar;C:\Users\Akshat Singh\.m2\repository\com\fasterxml\classmate\1.5.1\classmate-1.5.1.jar;C:\Users\Akshat Singh\.m2\repository\net\bytebuddy\byte-buddy\1.14.10\byte-buddy-1.14.10.jar;C:\Users\Akshat Singh\.m2\repository\org\glassfish\jaxb\jaxb-runtime\4.0.4\jaxb-runtime-4.0.4.jar;C:\Users\Akshat Singh\.m2\repository\org\glassfish\jaxb\jaxb-core\4.0.4\jaxb-core-4.0.4.jar;C:\Users\Akshat Singh\.m2\repository\org\eclipse\angus\angus-activation\2.0.1\angus-activation-2.0.1.jar;C:\Users\Akshat Singh\.m2\repository\org\glassfish\jaxb\txw2\4.0.4\txw2-4.0.4.jar;C:\Users\Akshat Singh\.m2\repository\com\sun\istack\istack-commons-runtime\4.1.2\istack-commons-runtime-4.1.2.jar;C:\Users\Akshat Singh\.m2\repository\jakarta\inject\jakarta.inject-api\2.0.1\jakarta.inject-api-2.0.1.jar;C:\Users\Akshat Singh\.m2\repository\org\antlr\antlr4-runtime\4.10.1\antlr4-runtime-4.10.1.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\data\spring-data-jpa\3.1.6\spring-data-jpa-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\data\spring-data-commons\3.1.6\spring-data-commons-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-orm\6.0.14\spring-orm-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-tx\6.0.14\spring-tx-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\slf4j\slf4j-api\2.0.9\slf4j-api-2.0.9.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-aspects\6.0.14\spring-aspects-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\com\h2database\h2\2.1.214\h2-2.1.214.jar;C:\Users\Akshat Singh\.m2\repository\com\mysql\mysql-connector-j\8.0.33\mysql-connector-j-8.0.33.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-starter-validation\3.1.6\spring-boot-starter-validation-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\10.1.16\tomcat-embed-el-10.1.16.jar;C:\Users\Akshat Singh\.m2\repository\org\hibernate\validator\hibernate-validator\8.0.1.Final\hibernate-validator-8.0.1.Final.jar;C:\Users\Akshat Singh\.m2\repository\jakarta\validation\jakarta.validation-api\3.0.2\jakarta.validation-api-3.0.2.jar;C:\Users\Akshat Singh\.m2\repository\org\springdoc\springdoc-openapi-starter-webmvc-ui\2.2.0\springdoc-openapi-starter-webmvc-ui-2.2.0.jar;C:\Users\Akshat Singh\.m2\repository\org\springdoc\springdoc-openapi-starter-webmvc-api\2.2.0\springdoc-openapi-starter-webmvc-api-2.2.0.jar;C:\Users\Akshat Singh\.m2\repository\org\springdoc\springdoc-openapi-starter-common\2.2.0\springdoc-openapi-starter-common-2.2.0.jar;C:\Users\Akshat Singh\.m2\repository\io\swagger\core\v3\swagger-core-jakarta\2.2.15\swagger-core-jakarta-2.2.15.jar;C:\Users\Akshat Singh\.m2\repository\org\apache\commons\commons-lang3\3.12.0\commons-lang3-3.12.0.jar;C:\Users\Akshat Singh\.m2\repository\io\swagger\core\v3\swagger-annotations-jakarta\2.2.15\swagger-annotations-jakarta-2.2.15.jar;C:\Users\Akshat Singh\.m2\repository\io\swagger\core\v3\swagger-models-jakarta\2.2.15\swagger-models-jakarta-2.2.15.jar;C:\Users\Akshat Singh\.m2\repository\com\fasterxml\jackson\dataformat\jackson-dataformat-yaml\2.15.3\jackson-dataformat-yaml-2.15.3.jar;C:\Users\Akshat Singh\.m2\repository\org\webjars\swagger-ui\5.2.0\swagger-ui-5.2.0.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-starter-test\3.1.6\spring-boot-starter-test-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-test\3.1.6\spring-boot-test-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-test-autoconfigure\3.1.6\spring-boot-test-autoconfigure-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\com\jayway\jsonpath\json-path\2.8.0\json-path-2.8.0.jar;C:\Users\Akshat Singh\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.1\jakarta.xml.bind-api-4.0.1.jar;C:\Users\Akshat Singh\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.2\jakarta.activation-api-2.1.2.jar;C:\Users\Akshat Singh\.m2\repository\net\minidev\json-smart\2.4.11\json-smart-2.4.11.jar;C:\Users\Akshat Singh\.m2\repository\net\minidev\accessors-smart\2.4.11\accessors-smart-2.4.11.jar;C:\Users\Akshat Singh\.m2\repository\org\ow2\asm\asm\9.3\asm-9.3.jar;C:\Users\Akshat Singh\.m2\repository\org\assertj\assertj-core\3.24.2\assertj-core-3.24.2.jar;C:\Users\Akshat Singh\.m2\repository\org\hamcrest\hamcrest\2.2\hamcrest-2.2.jar;C:\Users\Akshat Singh\.m2\repository\org\junit\jupiter\junit-jupiter\5.9.3\junit-jupiter-5.9.3.jar;C:\Users\Akshat Singh\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.3\junit-jupiter-api-5.9.3.jar;C:\Users\Akshat Singh\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\Akshat Singh\.m2\repository\org\junit\platform\junit-platform-commons\1.9.3\junit-platform-commons-1.9.3.jar;C:\Users\Akshat Singh\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Akshat Singh\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.9.3\junit-jupiter-params-5.9.3.jar;C:\Users\Akshat Singh\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.9.3\junit-jupiter-engine-5.9.3.jar;C:\Users\Akshat Singh\.m2\repository\org\junit\platform\junit-platform-engine\1.9.3\junit-platform-engine-1.9.3.jar;C:\Users\Akshat Singh\.m2\repository\org\mockito\mockito-core\5.3.1\mockito-core-5.3.1.jar;C:\Users\Akshat Singh\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.10\byte-buddy-agent-1.14.10.jar;C:\Users\Akshat Singh\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\Akshat Singh\.m2\repository\org\mockito\mockito-junit-jupiter\5.3.1\mockito-junit-jupiter-5.3.1.jar;C:\Users\Akshat Singh\.m2\repository\org\skyscreamer\jsonassert\1.5.1\jsonassert-1.5.1.jar;C:\Users\Akshat Singh\.m2\repository\com\vaadin\external\google\android-json\0.0.20131108.vaadin1\android-json-0.0.20131108.vaadin1.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-core\6.0.14\spring-core-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-jcl\6.0.14\spring-jcl-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-test\6.0.14\spring-test-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\xmlunit\xmlunit-core\2.9.1\xmlunit-core-2.9.1.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="Asia/Calcutta"/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="java.vm.specification.version" value="26"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="IN"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-26.0.1\bin"/>
+    <property name="sun.java.command" value="C:\Users\Akshat Singh\AppData\Local\Temp\surefire17381534575076126699\surefirebooter-20260907145204125_3.jar C:\Users\Akshat Singh\AppData\Local\Temp\surefire17381534575076126699 2026-09-07T14-52-04_013-jvmRun1 surefire-20260907145204125_1tmp surefire_0-20260907145204125_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="D:\weather_info_assessment\target\test-classes;D:\weather_info_assessment\target\classes;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-starter-web\3.1.6\spring-boot-starter-web-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-starter\3.1.6\spring-boot-starter-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot\3.1.6\spring-boot-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\3.1.6\spring-boot-autoconfigure-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-starter-logging\3.1.6\spring-boot-starter-logging-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\ch\qos\logback\logback-classic\1.4.11\logback-classic-1.4.11.jar;C:\Users\Akshat Singh\.m2\repository\ch\qos\logback\logback-core\1.4.11\logback-core-1.4.11.jar;C:\Users\Akshat Singh\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.20.0\log4j-to-slf4j-2.20.0.jar;C:\Users\Akshat Singh\.m2\repository\org\apache\logging\log4j\log4j-api\2.20.0\log4j-api-2.20.0.jar;C:\Users\Akshat Singh\.m2\repository\org\slf4j\jul-to-slf4j\2.0.9\jul-to-slf4j-2.0.9.jar;C:\Users\Akshat Singh\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar;C:\Users\Akshat Singh\.m2\repository\org\yaml\snakeyaml\1.33\snakeyaml-1.33.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-starter-json\3.1.6\spring-boot-starter-json-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.15.3\jackson-databind-2.15.3.jar;C:\Users\Akshat Singh\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.15.3\jackson-annotations-2.15.3.jar;C:\Users\Akshat Singh\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.15.3\jackson-core-2.15.3.jar;C:\Users\Akshat Singh\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.15.3\jackson-datatype-jdk8-2.15.3.jar;C:\Users\Akshat Singh\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.15.3\jackson-datatype-jsr310-2.15.3.jar;C:\Users\Akshat Singh\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.15.3\jackson-module-parameter-names-2.15.3.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\3.1.6\spring-boot-starter-tomcat-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\10.1.16\tomcat-embed-core-10.1.16.jar;C:\Users\Akshat Singh\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\10.1.16\tomcat-embed-websocket-10.1.16.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-web\6.0.14\spring-web-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-beans\6.0.14\spring-beans-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\io\micrometer\micrometer-observation\1.11.6\micrometer-observation-1.11.6.jar;C:\Users\Akshat Singh\.m2\repository\io\micrometer\micrometer-commons\1.11.6\micrometer-commons-1.11.6.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-webmvc\6.0.14\spring-webmvc-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-aop\6.0.14\spring-aop-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-context\6.0.14\spring-context-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-expression\6.0.14\spring-expression-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\3.1.6\spring-boot-starter-data-jpa-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-starter-aop\3.1.6\spring-boot-starter-aop-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\aspectj\aspectjweaver\1.9.20.1\aspectjweaver-1.9.20.1.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\3.1.6\spring-boot-starter-jdbc-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\com\zaxxer\HikariCP\5.0.1\HikariCP-5.0.1.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-jdbc\6.0.14\spring-jdbc-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\hibernate\orm\hibernate-core\6.2.13.Final\hibernate-core-6.2.13.Final.jar;C:\Users\Akshat Singh\.m2\repository\jakarta\persistence\jakarta.persistence-api\3.1.0\jakarta.persistence-api-3.1.0.jar;C:\Users\Akshat Singh\.m2\repository\jakarta\transaction\jakarta.transaction-api\2.0.1\jakarta.transaction-api-2.0.1.jar;C:\Users\Akshat Singh\.m2\repository\org\jboss\logging\jboss-logging\3.5.3.Final\jboss-logging-3.5.3.Final.jar;C:\Users\Akshat Singh\.m2\repository\org\hibernate\common\hibernate-commons-annotations\6.0.6.Final\hibernate-commons-annotations-6.0.6.Final.jar;C:\Users\Akshat Singh\.m2\repository\io\smallrye\jandex\3.0.5\jandex-3.0.5.jar;C:\Users\Akshat Singh\.m2\repository\com\fasterxml\classmate\1.5.1\classmate-1.5.1.jar;C:\Users\Akshat Singh\.m2\repository\net\bytebuddy\byte-buddy\1.14.10\byte-buddy-1.14.10.jar;C:\Users\Akshat Singh\.m2\repository\org\glassfish\jaxb\jaxb-runtime\4.0.4\jaxb-runtime-4.0.4.jar;C:\Users\Akshat Singh\.m2\repository\org\glassfish\jaxb\jaxb-core\4.0.4\jaxb-core-4.0.4.jar;C:\Users\Akshat Singh\.m2\repository\org\eclipse\angus\angus-activation\2.0.1\angus-activation-2.0.1.jar;C:\Users\Akshat Singh\.m2\repository\org\glassfish\jaxb\txw2\4.0.4\txw2-4.0.4.jar;C:\Users\Akshat Singh\.m2\repository\com\sun\istack\istack-commons-runtime\4.1.2\istack-commons-runtime-4.1.2.jar;C:\Users\Akshat Singh\.m2\repository\jakarta\inject\jakarta.inject-api\2.0.1\jakarta.inject-api-2.0.1.jar;C:\Users\Akshat Singh\.m2\repository\org\antlr\antlr4-runtime\4.10.1\antlr4-runtime-4.10.1.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\data\spring-data-jpa\3.1.6\spring-data-jpa-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\data\spring-data-commons\3.1.6\spring-data-commons-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-orm\6.0.14\spring-orm-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-tx\6.0.14\spring-tx-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\slf4j\slf4j-api\2.0.9\slf4j-api-2.0.9.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-aspects\6.0.14\spring-aspects-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\com\h2database\h2\2.1.214\h2-2.1.214.jar;C:\Users\Akshat Singh\.m2\repository\com\mysql\mysql-connector-j\8.0.33\mysql-connector-j-8.0.33.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-starter-validation\3.1.6\spring-boot-starter-validation-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\10.1.16\tomcat-embed-el-10.1.16.jar;C:\Users\Akshat Singh\.m2\repository\org\hibernate\validator\hibernate-validator\8.0.1.Final\hibernate-validator-8.0.1.Final.jar;C:\Users\Akshat Singh\.m2\repository\jakarta\validation\jakarta.validation-api\3.0.2\jakarta.validation-api-3.0.2.jar;C:\Users\Akshat Singh\.m2\repository\org\springdoc\springdoc-openapi-starter-webmvc-ui\2.2.0\springdoc-openapi-starter-webmvc-ui-2.2.0.jar;C:\Users\Akshat Singh\.m2\repository\org\springdoc\springdoc-openapi-starter-webmvc-api\2.2.0\springdoc-openapi-starter-webmvc-api-2.2.0.jar;C:\Users\Akshat Singh\.m2\repository\org\springdoc\springdoc-openapi-starter-common\2.2.0\springdoc-openapi-starter-common-2.2.0.jar;C:\Users\Akshat Singh\.m2\repository\io\swagger\core\v3\swagger-core-jakarta\2.2.15\swagger-core-jakarta-2.2.15.jar;C:\Users\Akshat Singh\.m2\repository\org\apache\commons\commons-lang3\3.12.0\commons-lang3-3.12.0.jar;C:\Users\Akshat Singh\.m2\repository\io\swagger\core\v3\swagger-annotations-jakarta\2.2.15\swagger-annotations-jakarta-2.2.15.jar;C:\Users\Akshat Singh\.m2\repository\io\swagger\core\v3\swagger-models-jakarta\2.2.15\swagger-models-jakarta-2.2.15.jar;C:\Users\Akshat Singh\.m2\repository\com\fasterxml\jackson\dataformat\jackson-dataformat-yaml\2.15.3\jackson-dataformat-yaml-2.15.3.jar;C:\Users\Akshat Singh\.m2\repository\org\webjars\swagger-ui\5.2.0\swagger-ui-5.2.0.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-starter-test\3.1.6\spring-boot-starter-test-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-test\3.1.6\spring-boot-test-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-test-autoconfigure\3.1.6\spring-boot-test-autoconfigure-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\com\jayway\jsonpath\json-path\2.8.0\json-path-2.8.0.jar;C:\Users\Akshat Singh\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.1\jakarta.xml.bind-api-4.0.1.jar;C:\Users\Akshat Singh\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.2\jakarta.activation-api-2.1.2.jar;C:\Users\Akshat Singh\.m2\repository\net\minidev\json-smart\2.4.11\json-smart-2.4.11.jar;C:\Users\Akshat Singh\.m2\repository\net\minidev\accessors-smart\2.4.11\accessors-smart-2.4.11.jar;C:\Users\Akshat Singh\.m2\repository\org\ow2\asm\asm\9.3\asm-9.3.jar;C:\Users\Akshat Singh\.m2\repository\org\assertj\assertj-core\3.24.2\assertj-core-3.24.2.jar;C:\Users\Akshat Singh\.m2\repository\org\hamcrest\hamcrest\2.2\hamcrest-2.2.jar;C:\Users\Akshat Singh\.m2\repository\org\junit\jupiter\junit-jupiter\5.9.3\junit-jupiter-5.9.3.jar;C:\Users\Akshat Singh\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.3\junit-jupiter-api-5.9.3.jar;C:\Users\Akshat Singh\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\Akshat Singh\.m2\repository\org\junit\platform\junit-platform-commons\1.9.3\junit-platform-commons-1.9.3.jar;C:\Users\Akshat Singh\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Akshat Singh\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.9.3\junit-jupiter-params-5.9.3.jar;C:\Users\Akshat Singh\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.9.3\junit-jupiter-engine-5.9.3.jar;C:\Users\Akshat Singh\.m2\repository\org\junit\platform\junit-platform-engine\1.9.3\junit-platform-engine-1.9.3.jar;C:\Users\Akshat Singh\.m2\repository\org\mockito\mockito-core\5.3.1\mockito-core-5.3.1.jar;C:\Users\Akshat Singh\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.10\byte-buddy-agent-1.14.10.jar;C:\Users\Akshat Singh\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\Akshat Singh\.m2\repository\org\mockito\mockito-junit-jupiter\5.3.1\mockito-junit-jupiter-5.3.1.jar;C:\Users\Akshat Singh\.m2\repository\org\skyscreamer\jsonassert\1.5.1\jsonassert-1.5.1.jar;C:\Users\Akshat Singh\.m2\repository\com\vaadin\external\google\android-json\0.0.20131108.vaadin1\android-json-0.0.20131108.vaadin1.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-core\6.0.14\spring-core-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-jcl\6.0.14\spring-jcl-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-test\6.0.14\spring-test-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\xmlunit\xmlunit-core\2.9.1\xmlunit-core-2.9.1.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\Akshat Singh"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2026-04-21"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk-26.0.1"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="D:\weather_info_assessment"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\Akshat Singh\AppData\Local\Temp\surefire17381534575076126699\surefirebooter-20260907145204125_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="26.0.1+8-34"/>
+    <property name="user.name" value="Akshat Singh"/>
+    <property name="stdout.encoding" value="Cp1252"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\Users\Akshat Singh\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\AKSHAT~1\AppData\Local\Temp\"/>
+    <property name="java.version" value="26.0.1"/>
+    <property name="user.dir" value="D:\weather_info_assessment"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-26.0.1\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Users\Akshat Singh\anaconda3;C:\Users\Akshat Singh\anaconda3\Library\mingw-w64\bin;C:\Users\Akshat Singh\anaconda3\Library\usr\bin;C:\Users\Akshat Singh\anaconda3\Library\bin;C:\Users\Akshat Singh\anaconda3\Scripts;C:\Users\Akshat Singh\anaconda3\bin;C:\Users\Akshat Singh\anaconda3\condabin;c:\Users\Akshat Singh\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\debugCommand;c:\Users\Akshat Singh\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\copilotCli;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files\nodejs;C:\Program Files\Git\cmd;C:\Program Files\Java\jdk-26.0.1\bin;C:\apache-maven-3.9.16\bin;C:\Users\Akshat Singh\AppData\Local\Programs\Python\Python310\Scripts;C:\Users\Akshat Singh\AppData\Local\Programs\Python\Python310;C:\Users\Akshat Singh\AppData\Local\Programs\Python\Python314\Scripts;C:\Users\Akshat Singh\AppData\Local\Programs\Python\Python314;C:\Users\Akshat Singh\.local\bin;C:\Users\Akshat Singh\AppData\Local\Microsoft\WindowsApps;C:\Users\Akshat Singh\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Akshat Singh\AppData\Roaming\npm;C:\Program Files\Git\bin;C:\Program Files\Git\cmd;C:\Users\Akshat Singh\AppData\Local\Programs\Antigravity\bin;C:\Users\Akshat Singh\AppData\Local\Programs\Antigravity IDE\bin;C:\Users\Akshat Singh\AppData\Local\Python\bin;C:\Users\Akshat Singh\AppData\Local\Programs\Ollama;c:\Users\Akshat Singh\.vscode\extensions\vscjava.vscode-java-debug-0.59.0\bundled\scripts\noConfigScripts;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="Cp1252"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="26.0.1+8-34"/>
+    <property name="stdin.encoding" value="Cp1252"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="70.0"/>
+  </properties>
+  <testcase name="when_location_missing_geocode_and_save" classname="com.example.weather.service.WeatherServiceImplTest" time="0.738">
+    <system-err><![CDATA[WARNING: A Java agent has been loaded dynamically (C:\Users\Akshat Singh\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.10\byte-buddy-agent-1.14.10.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+]]></system-err>
+  </testcase>
+  <testcase name="when_save_conflict_on_weather_then_reread" classname="com.example.weather.service.WeatherServiceImplTest" time="0.004"/>
+</testsuite>
+================================================================================
+
+
+================================================================================
+FILE: target/surefire-reports/TEST-com.example.weather.WeatherControllerTest.xml
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 33.38 KB
+Extension: .xml
+Language: xml
+Location: target/surefire-reports/TEST-com.example.weather.WeatherControllerTest.xml
+Relative Path: target/surefire-reports
+Created: 2026-09-07 09:22:09 (Asia/Calcutta / GMT+06:30)
+Modified: 2026-09-07 09:22:09 (Asia/Calcutta / GMT+06:30)
+MD5: 314a1dfbc2493a226f3a41a609a467dc
+SHA256: 1f77a33ea4725118ecc7138bd8539b8947961180352127ebf9058f64a7d5dcc1
+Encoding: ASCII
+
+FILE CONTENT:
+----------------------------------------
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.example.weather.WeatherControllerTest" time="3.548" tests="1" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="26"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="D:\weather_info_assessment\target\test-classes;D:\weather_info_assessment\target\classes;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-starter-web\3.1.6\spring-boot-starter-web-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-starter\3.1.6\spring-boot-starter-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot\3.1.6\spring-boot-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\3.1.6\spring-boot-autoconfigure-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-starter-logging\3.1.6\spring-boot-starter-logging-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\ch\qos\logback\logback-classic\1.4.11\logback-classic-1.4.11.jar;C:\Users\Akshat Singh\.m2\repository\ch\qos\logback\logback-core\1.4.11\logback-core-1.4.11.jar;C:\Users\Akshat Singh\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.20.0\log4j-to-slf4j-2.20.0.jar;C:\Users\Akshat Singh\.m2\repository\org\apache\logging\log4j\log4j-api\2.20.0\log4j-api-2.20.0.jar;C:\Users\Akshat Singh\.m2\repository\org\slf4j\jul-to-slf4j\2.0.9\jul-to-slf4j-2.0.9.jar;C:\Users\Akshat Singh\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar;C:\Users\Akshat Singh\.m2\repository\org\yaml\snakeyaml\1.33\snakeyaml-1.33.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-starter-json\3.1.6\spring-boot-starter-json-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.15.3\jackson-databind-2.15.3.jar;C:\Users\Akshat Singh\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.15.3\jackson-annotations-2.15.3.jar;C:\Users\Akshat Singh\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.15.3\jackson-core-2.15.3.jar;C:\Users\Akshat Singh\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.15.3\jackson-datatype-jdk8-2.15.3.jar;C:\Users\Akshat Singh\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.15.3\jackson-datatype-jsr310-2.15.3.jar;C:\Users\Akshat Singh\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.15.3\jackson-module-parameter-names-2.15.3.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\3.1.6\spring-boot-starter-tomcat-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\10.1.16\tomcat-embed-core-10.1.16.jar;C:\Users\Akshat Singh\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\10.1.16\tomcat-embed-websocket-10.1.16.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-web\6.0.14\spring-web-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-beans\6.0.14\spring-beans-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\io\micrometer\micrometer-observation\1.11.6\micrometer-observation-1.11.6.jar;C:\Users\Akshat Singh\.m2\repository\io\micrometer\micrometer-commons\1.11.6\micrometer-commons-1.11.6.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-webmvc\6.0.14\spring-webmvc-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-aop\6.0.14\spring-aop-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-context\6.0.14\spring-context-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-expression\6.0.14\spring-expression-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\3.1.6\spring-boot-starter-data-jpa-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-starter-aop\3.1.6\spring-boot-starter-aop-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\aspectj\aspectjweaver\1.9.20.1\aspectjweaver-1.9.20.1.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\3.1.6\spring-boot-starter-jdbc-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\com\zaxxer\HikariCP\5.0.1\HikariCP-5.0.1.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-jdbc\6.0.14\spring-jdbc-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\hibernate\orm\hibernate-core\6.2.13.Final\hibernate-core-6.2.13.Final.jar;C:\Users\Akshat Singh\.m2\repository\jakarta\persistence\jakarta.persistence-api\3.1.0\jakarta.persistence-api-3.1.0.jar;C:\Users\Akshat Singh\.m2\repository\jakarta\transaction\jakarta.transaction-api\2.0.1\jakarta.transaction-api-2.0.1.jar;C:\Users\Akshat Singh\.m2\repository\org\jboss\logging\jboss-logging\3.5.3.Final\jboss-logging-3.5.3.Final.jar;C:\Users\Akshat Singh\.m2\repository\org\hibernate\common\hibernate-commons-annotations\6.0.6.Final\hibernate-commons-annotations-6.0.6.Final.jar;C:\Users\Akshat Singh\.m2\repository\io\smallrye\jandex\3.0.5\jandex-3.0.5.jar;C:\Users\Akshat Singh\.m2\repository\com\fasterxml\classmate\1.5.1\classmate-1.5.1.jar;C:\Users\Akshat Singh\.m2\repository\net\bytebuddy\byte-buddy\1.14.10\byte-buddy-1.14.10.jar;C:\Users\Akshat Singh\.m2\repository\org\glassfish\jaxb\jaxb-runtime\4.0.4\jaxb-runtime-4.0.4.jar;C:\Users\Akshat Singh\.m2\repository\org\glassfish\jaxb\jaxb-core\4.0.4\jaxb-core-4.0.4.jar;C:\Users\Akshat Singh\.m2\repository\org\eclipse\angus\angus-activation\2.0.1\angus-activation-2.0.1.jar;C:\Users\Akshat Singh\.m2\repository\org\glassfish\jaxb\txw2\4.0.4\txw2-4.0.4.jar;C:\Users\Akshat Singh\.m2\repository\com\sun\istack\istack-commons-runtime\4.1.2\istack-commons-runtime-4.1.2.jar;C:\Users\Akshat Singh\.m2\repository\jakarta\inject\jakarta.inject-api\2.0.1\jakarta.inject-api-2.0.1.jar;C:\Users\Akshat Singh\.m2\repository\org\antlr\antlr4-runtime\4.10.1\antlr4-runtime-4.10.1.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\data\spring-data-jpa\3.1.6\spring-data-jpa-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\data\spring-data-commons\3.1.6\spring-data-commons-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-orm\6.0.14\spring-orm-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-tx\6.0.14\spring-tx-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\slf4j\slf4j-api\2.0.9\slf4j-api-2.0.9.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-aspects\6.0.14\spring-aspects-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\com\h2database\h2\2.1.214\h2-2.1.214.jar;C:\Users\Akshat Singh\.m2\repository\com\mysql\mysql-connector-j\8.0.33\mysql-connector-j-8.0.33.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-starter-validation\3.1.6\spring-boot-starter-validation-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\10.1.16\tomcat-embed-el-10.1.16.jar;C:\Users\Akshat Singh\.m2\repository\org\hibernate\validator\hibernate-validator\8.0.1.Final\hibernate-validator-8.0.1.Final.jar;C:\Users\Akshat Singh\.m2\repository\jakarta\validation\jakarta.validation-api\3.0.2\jakarta.validation-api-3.0.2.jar;C:\Users\Akshat Singh\.m2\repository\org\springdoc\springdoc-openapi-starter-webmvc-ui\2.2.0\springdoc-openapi-starter-webmvc-ui-2.2.0.jar;C:\Users\Akshat Singh\.m2\repository\org\springdoc\springdoc-openapi-starter-webmvc-api\2.2.0\springdoc-openapi-starter-webmvc-api-2.2.0.jar;C:\Users\Akshat Singh\.m2\repository\org\springdoc\springdoc-openapi-starter-common\2.2.0\springdoc-openapi-starter-common-2.2.0.jar;C:\Users\Akshat Singh\.m2\repository\io\swagger\core\v3\swagger-core-jakarta\2.2.15\swagger-core-jakarta-2.2.15.jar;C:\Users\Akshat Singh\.m2\repository\org\apache\commons\commons-lang3\3.12.0\commons-lang3-3.12.0.jar;C:\Users\Akshat Singh\.m2\repository\io\swagger\core\v3\swagger-annotations-jakarta\2.2.15\swagger-annotations-jakarta-2.2.15.jar;C:\Users\Akshat Singh\.m2\repository\io\swagger\core\v3\swagger-models-jakarta\2.2.15\swagger-models-jakarta-2.2.15.jar;C:\Users\Akshat Singh\.m2\repository\com\fasterxml\jackson\dataformat\jackson-dataformat-yaml\2.15.3\jackson-dataformat-yaml-2.15.3.jar;C:\Users\Akshat Singh\.m2\repository\org\webjars\swagger-ui\5.2.0\swagger-ui-5.2.0.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-starter-test\3.1.6\spring-boot-starter-test-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-test\3.1.6\spring-boot-test-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-test-autoconfigure\3.1.6\spring-boot-test-autoconfigure-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\com\jayway\jsonpath\json-path\2.8.0\json-path-2.8.0.jar;C:\Users\Akshat Singh\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.1\jakarta.xml.bind-api-4.0.1.jar;C:\Users\Akshat Singh\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.2\jakarta.activation-api-2.1.2.jar;C:\Users\Akshat Singh\.m2\repository\net\minidev\json-smart\2.4.11\json-smart-2.4.11.jar;C:\Users\Akshat Singh\.m2\repository\net\minidev\accessors-smart\2.4.11\accessors-smart-2.4.11.jar;C:\Users\Akshat Singh\.m2\repository\org\ow2\asm\asm\9.3\asm-9.3.jar;C:\Users\Akshat Singh\.m2\repository\org\assertj\assertj-core\3.24.2\assertj-core-3.24.2.jar;C:\Users\Akshat Singh\.m2\repository\org\hamcrest\hamcrest\2.2\hamcrest-2.2.jar;C:\Users\Akshat Singh\.m2\repository\org\junit\jupiter\junit-jupiter\5.9.3\junit-jupiter-5.9.3.jar;C:\Users\Akshat Singh\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.3\junit-jupiter-api-5.9.3.jar;C:\Users\Akshat Singh\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\Akshat Singh\.m2\repository\org\junit\platform\junit-platform-commons\1.9.3\junit-platform-commons-1.9.3.jar;C:\Users\Akshat Singh\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Akshat Singh\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.9.3\junit-jupiter-params-5.9.3.jar;C:\Users\Akshat Singh\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.9.3\junit-jupiter-engine-5.9.3.jar;C:\Users\Akshat Singh\.m2\repository\org\junit\platform\junit-platform-engine\1.9.3\junit-platform-engine-1.9.3.jar;C:\Users\Akshat Singh\.m2\repository\org\mockito\mockito-core\5.3.1\mockito-core-5.3.1.jar;C:\Users\Akshat Singh\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.10\byte-buddy-agent-1.14.10.jar;C:\Users\Akshat Singh\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\Akshat Singh\.m2\repository\org\mockito\mockito-junit-jupiter\5.3.1\mockito-junit-jupiter-5.3.1.jar;C:\Users\Akshat Singh\.m2\repository\org\skyscreamer\jsonassert\1.5.1\jsonassert-1.5.1.jar;C:\Users\Akshat Singh\.m2\repository\com\vaadin\external\google\android-json\0.0.20131108.vaadin1\android-json-0.0.20131108.vaadin1.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-core\6.0.14\spring-core-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-jcl\6.0.14\spring-jcl-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-test\6.0.14\spring-test-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\xmlunit\xmlunit-core\2.9.1\xmlunit-core-2.9.1.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="catalina.useNaming" value="false"/>
+    <property name="user.timezone" value="Asia/Calcutta"/>
+    <property name="org.jboss.logging.provider" value="slf4j"/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="java.vm.specification.version" value="26"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="IN"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-26.0.1\bin"/>
+    <property name="sun.java.command" value="C:\Users\Akshat Singh\AppData\Local\Temp\surefire17381534575076126699\surefirebooter-20260907145204125_3.jar C:\Users\Akshat Singh\AppData\Local\Temp\surefire17381534575076126699 2026-09-07T14-52-04_013-jvmRun1 surefire-20260907145204125_1tmp surefire_0-20260907145204125_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="D:\weather_info_assessment\target\test-classes;D:\weather_info_assessment\target\classes;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-starter-web\3.1.6\spring-boot-starter-web-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-starter\3.1.6\spring-boot-starter-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot\3.1.6\spring-boot-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\3.1.6\spring-boot-autoconfigure-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-starter-logging\3.1.6\spring-boot-starter-logging-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\ch\qos\logback\logback-classic\1.4.11\logback-classic-1.4.11.jar;C:\Users\Akshat Singh\.m2\repository\ch\qos\logback\logback-core\1.4.11\logback-core-1.4.11.jar;C:\Users\Akshat Singh\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.20.0\log4j-to-slf4j-2.20.0.jar;C:\Users\Akshat Singh\.m2\repository\org\apache\logging\log4j\log4j-api\2.20.0\log4j-api-2.20.0.jar;C:\Users\Akshat Singh\.m2\repository\org\slf4j\jul-to-slf4j\2.0.9\jul-to-slf4j-2.0.9.jar;C:\Users\Akshat Singh\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar;C:\Users\Akshat Singh\.m2\repository\org\yaml\snakeyaml\1.33\snakeyaml-1.33.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-starter-json\3.1.6\spring-boot-starter-json-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.15.3\jackson-databind-2.15.3.jar;C:\Users\Akshat Singh\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.15.3\jackson-annotations-2.15.3.jar;C:\Users\Akshat Singh\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.15.3\jackson-core-2.15.3.jar;C:\Users\Akshat Singh\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.15.3\jackson-datatype-jdk8-2.15.3.jar;C:\Users\Akshat Singh\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.15.3\jackson-datatype-jsr310-2.15.3.jar;C:\Users\Akshat Singh\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.15.3\jackson-module-parameter-names-2.15.3.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\3.1.6\spring-boot-starter-tomcat-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\10.1.16\tomcat-embed-core-10.1.16.jar;C:\Users\Akshat Singh\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\10.1.16\tomcat-embed-websocket-10.1.16.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-web\6.0.14\spring-web-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-beans\6.0.14\spring-beans-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\io\micrometer\micrometer-observation\1.11.6\micrometer-observation-1.11.6.jar;C:\Users\Akshat Singh\.m2\repository\io\micrometer\micrometer-commons\1.11.6\micrometer-commons-1.11.6.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-webmvc\6.0.14\spring-webmvc-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-aop\6.0.14\spring-aop-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-context\6.0.14\spring-context-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-expression\6.0.14\spring-expression-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\3.1.6\spring-boot-starter-data-jpa-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-starter-aop\3.1.6\spring-boot-starter-aop-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\aspectj\aspectjweaver\1.9.20.1\aspectjweaver-1.9.20.1.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\3.1.6\spring-boot-starter-jdbc-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\com\zaxxer\HikariCP\5.0.1\HikariCP-5.0.1.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-jdbc\6.0.14\spring-jdbc-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\hibernate\orm\hibernate-core\6.2.13.Final\hibernate-core-6.2.13.Final.jar;C:\Users\Akshat Singh\.m2\repository\jakarta\persistence\jakarta.persistence-api\3.1.0\jakarta.persistence-api-3.1.0.jar;C:\Users\Akshat Singh\.m2\repository\jakarta\transaction\jakarta.transaction-api\2.0.1\jakarta.transaction-api-2.0.1.jar;C:\Users\Akshat Singh\.m2\repository\org\jboss\logging\jboss-logging\3.5.3.Final\jboss-logging-3.5.3.Final.jar;C:\Users\Akshat Singh\.m2\repository\org\hibernate\common\hibernate-commons-annotations\6.0.6.Final\hibernate-commons-annotations-6.0.6.Final.jar;C:\Users\Akshat Singh\.m2\repository\io\smallrye\jandex\3.0.5\jandex-3.0.5.jar;C:\Users\Akshat Singh\.m2\repository\com\fasterxml\classmate\1.5.1\classmate-1.5.1.jar;C:\Users\Akshat Singh\.m2\repository\net\bytebuddy\byte-buddy\1.14.10\byte-buddy-1.14.10.jar;C:\Users\Akshat Singh\.m2\repository\org\glassfish\jaxb\jaxb-runtime\4.0.4\jaxb-runtime-4.0.4.jar;C:\Users\Akshat Singh\.m2\repository\org\glassfish\jaxb\jaxb-core\4.0.4\jaxb-core-4.0.4.jar;C:\Users\Akshat Singh\.m2\repository\org\eclipse\angus\angus-activation\2.0.1\angus-activation-2.0.1.jar;C:\Users\Akshat Singh\.m2\repository\org\glassfish\jaxb\txw2\4.0.4\txw2-4.0.4.jar;C:\Users\Akshat Singh\.m2\repository\com\sun\istack\istack-commons-runtime\4.1.2\istack-commons-runtime-4.1.2.jar;C:\Users\Akshat Singh\.m2\repository\jakarta\inject\jakarta.inject-api\2.0.1\jakarta.inject-api-2.0.1.jar;C:\Users\Akshat Singh\.m2\repository\org\antlr\antlr4-runtime\4.10.1\antlr4-runtime-4.10.1.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\data\spring-data-jpa\3.1.6\spring-data-jpa-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\data\spring-data-commons\3.1.6\spring-data-commons-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-orm\6.0.14\spring-orm-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-tx\6.0.14\spring-tx-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\slf4j\slf4j-api\2.0.9\slf4j-api-2.0.9.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-aspects\6.0.14\spring-aspects-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\com\h2database\h2\2.1.214\h2-2.1.214.jar;C:\Users\Akshat Singh\.m2\repository\com\mysql\mysql-connector-j\8.0.33\mysql-connector-j-8.0.33.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-starter-validation\3.1.6\spring-boot-starter-validation-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\10.1.16\tomcat-embed-el-10.1.16.jar;C:\Users\Akshat Singh\.m2\repository\org\hibernate\validator\hibernate-validator\8.0.1.Final\hibernate-validator-8.0.1.Final.jar;C:\Users\Akshat Singh\.m2\repository\jakarta\validation\jakarta.validation-api\3.0.2\jakarta.validation-api-3.0.2.jar;C:\Users\Akshat Singh\.m2\repository\org\springdoc\springdoc-openapi-starter-webmvc-ui\2.2.0\springdoc-openapi-starter-webmvc-ui-2.2.0.jar;C:\Users\Akshat Singh\.m2\repository\org\springdoc\springdoc-openapi-starter-webmvc-api\2.2.0\springdoc-openapi-starter-webmvc-api-2.2.0.jar;C:\Users\Akshat Singh\.m2\repository\org\springdoc\springdoc-openapi-starter-common\2.2.0\springdoc-openapi-starter-common-2.2.0.jar;C:\Users\Akshat Singh\.m2\repository\io\swagger\core\v3\swagger-core-jakarta\2.2.15\swagger-core-jakarta-2.2.15.jar;C:\Users\Akshat Singh\.m2\repository\org\apache\commons\commons-lang3\3.12.0\commons-lang3-3.12.0.jar;C:\Users\Akshat Singh\.m2\repository\io\swagger\core\v3\swagger-annotations-jakarta\2.2.15\swagger-annotations-jakarta-2.2.15.jar;C:\Users\Akshat Singh\.m2\repository\io\swagger\core\v3\swagger-models-jakarta\2.2.15\swagger-models-jakarta-2.2.15.jar;C:\Users\Akshat Singh\.m2\repository\com\fasterxml\jackson\dataformat\jackson-dataformat-yaml\2.15.3\jackson-dataformat-yaml-2.15.3.jar;C:\Users\Akshat Singh\.m2\repository\org\webjars\swagger-ui\5.2.0\swagger-ui-5.2.0.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-starter-test\3.1.6\spring-boot-starter-test-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-test\3.1.6\spring-boot-test-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\boot\spring-boot-test-autoconfigure\3.1.6\spring-boot-test-autoconfigure-3.1.6.jar;C:\Users\Akshat Singh\.m2\repository\com\jayway\jsonpath\json-path\2.8.0\json-path-2.8.0.jar;C:\Users\Akshat Singh\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.1\jakarta.xml.bind-api-4.0.1.jar;C:\Users\Akshat Singh\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.2\jakarta.activation-api-2.1.2.jar;C:\Users\Akshat Singh\.m2\repository\net\minidev\json-smart\2.4.11\json-smart-2.4.11.jar;C:\Users\Akshat Singh\.m2\repository\net\minidev\accessors-smart\2.4.11\accessors-smart-2.4.11.jar;C:\Users\Akshat Singh\.m2\repository\org\ow2\asm\asm\9.3\asm-9.3.jar;C:\Users\Akshat Singh\.m2\repository\org\assertj\assertj-core\3.24.2\assertj-core-3.24.2.jar;C:\Users\Akshat Singh\.m2\repository\org\hamcrest\hamcrest\2.2\hamcrest-2.2.jar;C:\Users\Akshat Singh\.m2\repository\org\junit\jupiter\junit-jupiter\5.9.3\junit-jupiter-5.9.3.jar;C:\Users\Akshat Singh\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.3\junit-jupiter-api-5.9.3.jar;C:\Users\Akshat Singh\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\Akshat Singh\.m2\repository\org\junit\platform\junit-platform-commons\1.9.3\junit-platform-commons-1.9.3.jar;C:\Users\Akshat Singh\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Akshat Singh\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.9.3\junit-jupiter-params-5.9.3.jar;C:\Users\Akshat Singh\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.9.3\junit-jupiter-engine-5.9.3.jar;C:\Users\Akshat Singh\.m2\repository\org\junit\platform\junit-platform-engine\1.9.3\junit-platform-engine-1.9.3.jar;C:\Users\Akshat Singh\.m2\repository\org\mockito\mockito-core\5.3.1\mockito-core-5.3.1.jar;C:\Users\Akshat Singh\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.10\byte-buddy-agent-1.14.10.jar;C:\Users\Akshat Singh\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\Akshat Singh\.m2\repository\org\mockito\mockito-junit-jupiter\5.3.1\mockito-junit-jupiter-5.3.1.jar;C:\Users\Akshat Singh\.m2\repository\org\skyscreamer\jsonassert\1.5.1\jsonassert-1.5.1.jar;C:\Users\Akshat Singh\.m2\repository\com\vaadin\external\google\android-json\0.0.20131108.vaadin1\android-json-0.0.20131108.vaadin1.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-core\6.0.14\spring-core-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-jcl\6.0.14\spring-jcl-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\springframework\spring-test\6.0.14\spring-test-6.0.14.jar;C:\Users\Akshat Singh\.m2\repository\org\xmlunit\xmlunit-core\2.9.1\xmlunit-core-2.9.1.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\Akshat Singh"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2026-04-21"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk-26.0.1"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="D:\weather_info_assessment"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="FILE_LOG_CHARSET" value="UTF-8"/>
+    <property name="java.awt.headless" value="true"/>
+    <property name="surefire.real.class.path" value="C:\Users\Akshat Singh\AppData\Local\Temp\surefire17381534575076126699\surefirebooter-20260907145204125_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="26.0.1+8-34"/>
+    <property name="user.name" value="Akshat Singh"/>
+    <property name="stdout.encoding" value="Cp1252"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\Users\Akshat Singh\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\AKSHAT~1\AppData\Local\Temp\"/>
+    <property name="catalina.home" value="C:\Users\Akshat Singh\AppData\Local\Temp\tomcat.0.17528299376835707482"/>
+    <property name="com.zaxxer.hikari.pool_number" value="1"/>
+    <property name="java.version" value="26.0.1"/>
+    <property name="user.dir" value="D:\weather_info_assessment"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="PID" value="22772"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="CONSOLE_LOG_CHARSET" value="UTF-8"/>
+    <property name="catalina.base" value="C:\Users\Akshat Singh\AppData\Local\Temp\tomcat.0.17528299376835707482"/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-26.0.1\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Users\Akshat Singh\anaconda3;C:\Users\Akshat Singh\anaconda3\Library\mingw-w64\bin;C:\Users\Akshat Singh\anaconda3\Library\usr\bin;C:\Users\Akshat Singh\anaconda3\Library\bin;C:\Users\Akshat Singh\anaconda3\Scripts;C:\Users\Akshat Singh\anaconda3\bin;C:\Users\Akshat Singh\anaconda3\condabin;c:\Users\Akshat Singh\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\debugCommand;c:\Users\Akshat Singh\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\copilotCli;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files\nodejs;C:\Program Files\Git\cmd;C:\Program Files\Java\jdk-26.0.1\bin;C:\apache-maven-3.9.16\bin;C:\Users\Akshat Singh\AppData\Local\Programs\Python\Python310\Scripts;C:\Users\Akshat Singh\AppData\Local\Programs\Python\Python310;C:\Users\Akshat Singh\AppData\Local\Programs\Python\Python314\Scripts;C:\Users\Akshat Singh\AppData\Local\Programs\Python\Python314;C:\Users\Akshat Singh\.local\bin;C:\Users\Akshat Singh\AppData\Local\Microsoft\WindowsApps;C:\Users\Akshat Singh\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Akshat Singh\AppData\Roaming\npm;C:\Program Files\Git\bin;C:\Program Files\Git\cmd;C:\Users\Akshat Singh\AppData\Local\Programs\Antigravity\bin;C:\Users\Akshat Singh\AppData\Local\Programs\Antigravity IDE\bin;C:\Users\Akshat Singh\AppData\Local\Python\bin;C:\Users\Akshat Singh\AppData\Local\Programs\Ollama;c:\Users\Akshat Singh\.vscode\extensions\vscjava.vscode-java-debug-0.59.0\bundled\scripts\noConfigScripts;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="Cp1252"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="26.0.1+8-34"/>
+    <property name="stdin.encoding" value="Cp1252"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="70.0"/>
+  </properties>
+  <testcase name="smokeTestEndpoint_get" classname="com.example.weather.WeatherControllerTest" time="0.292">
+    <system-out><![CDATA[14:52:05.785 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.weather.WeatherControllerTest]: WeatherControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+14:52:05.870 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.weather.WeatherServiceApplication for test class com.example.weather.WeatherControllerTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.1.6)
+
+2026-09-07T14:52:06.154+05:30  INFO 22772 --- [           main] c.example.weather.WeatherControllerTest  : Starting WeatherControllerTest using Java 26.0.1 with PID 22772 (started by Akshat Singh in D:\weather_info_assessment)
+2026-09-07T14:52:06.156+05:30  INFO 22772 --- [           main] c.example.weather.WeatherControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2026-09-07T14:52:06.693+05:30  INFO 22772 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-07T14:52:06.734+05:30  INFO 22772 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 34 ms. Found 2 JPA repository interfaces.
+2026-09-07T14:52:07.142+05:30  INFO 22772 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2026-09-07T14:52:07.148+05:30  INFO 22772 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-09-07T14:52:07.150+05:30  INFO 22772 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2026-09-07T14:52:07.230+05:30  INFO 22772 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-09-07T14:52:07.231+05:30  INFO 22772 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1061 ms
+2026-09-07T14:52:07.375+05:30  INFO 22772 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-09-07T14:52:07.411+05:30  INFO 22772 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
+2026-09-07T14:52:07.413+05:30  INFO 22772 --- [           main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2026-09-07T14:52:07.504+05:30  INFO 22772 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-09-07T14:52:07.524+05:30  INFO 22772 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-09-07T14:52:07.695+05:30  INFO 22772 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:weatherdb-test user=SA
+2026-09-07T14:52:07.697+05:30  INFO 22772 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-09-07T14:52:08.212+05:30  INFO 22772 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-09-07T14:52:08.248+05:30  INFO 22772 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-07T14:52:08.660+05:30  WARN 22772 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-09-07T14:52:08.955+05:30  INFO 22772 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 54444 (http) with context path ''
+2026-09-07T14:52:08.961+05:30  INFO 22772 --- [           main] c.example.weather.WeatherControllerTest  : Started WeatherControllerTest in 3.004 seconds (process running for 4.716)
+2026-09-07T14:52:09.041+05:30  INFO 22772 --- [o-auto-1-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-07T14:52:09.041+05:30  INFO 22772 --- [o-auto-1-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-09-07T14:52:09.042+05:30  INFO 22772 --- [o-auto-1-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+]]></system-out>
+  </testcase>
+</testsuite>
+================================================================================
+
+
+================================================================================
+BINARY/EXCLUDED FILES (not included in text content)
+================================================================================
+- target/surefire-reports/2026-09-06T22-54-59_846.dumpstream
+- target/surefire-reports/2026-09-06T22-55-36_348.dumpstream
+- target/surefire-reports/2026-09-06T22-56-01_455.dumpstream
+- target/surefire-reports/2026-09-06T22-56-31_603.dumpstream
+- target/surefire-reports/2026-09-06T23-08-44_126.dumpstream
+- target/surefire-reports/2026-09-06T23-14-47_398.dumpstream
+- target/surefire-reports/2026-09-07T14-52-04_013.dumpstream
+
+
+================================================================================
+BINARY/EXCLUDED FILES (not included in text content)
+================================================================================
+- target/test-classes/com/example/weather/adapters/OpenWeatherClientImplTest.class
+
+
+================================================================================
+BINARY/EXCLUDED FILES (not included in text content)
+================================================================================
+- target/test-classes/com/example/weather/service/WeatherServiceImplTest.class
+
+
+================================================================================
+BINARY/EXCLUDED FILES (not included in text content)
+================================================================================
+- target/test-classes/com/example/weather/WeatherControllerTest.class
+
+
+================================================================================
+FILE: target/test-classes/application.yml
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 214 B
+Extension: .yml
+Language: yaml
+Location: target/test-classes/application.yml
+Relative Path: target/test-classes
+Created: 2026-09-07 09:11:08 (Asia/Calcutta / GMT+06:30)
+Modified: 2026-09-06 17:44:52 (Asia/Calcutta / GMT+06:30)
+MD5: d94bd044055d2b2254d2ad1d68c0ca68
+SHA256: d60b5a8f668d853bd13f923fe0c36b3f9cae45da76f1483646e4f0ef385d1ff1
+Encoding: ASCII
+
+FILE CONTENT:
+----------------------------------------
+spring:
+  datasource:
+    url: jdbc:h2:mem:weatherdb-test;DB_CLOSE_DELAY=-1;MODE=MySQL
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+
+================================================================================
+
+
+================================================================================
+FILE: pom.xml
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 2.39 KB
+Extension: .xml
+Language: xml
+Location: pom.xml
+Relative Path: root
+Created: 2026-09-06 14:44:42 (Asia/Calcutta / GMT+06:30)
+Modified: 2026-09-07 09:13:42 (Asia/Calcutta / GMT+06:30)
+MD5: e2258762add22705d8bfe9d7f1437088
+SHA256: c06813d6d9585432502c905af256b12a5762de6d54047dd66056d7b8b85ac152
+Encoding: ASCII
+
+FILE CONTENT:
+----------------------------------------
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>weather-service</artifactId>
+    <version>0.1.0</version>
+    <packaging>jar</packaging>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.1.6</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <properties>
+        <java.version>17</java.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+            <version>2.2.0</version>
+        </dependency>
+        <!-- Redis removed per assignment requirement -->
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <!-- Testcontainers removed to keep tests lightweight (H2 + MockRestServiceServer used) -->
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+
+================================================================================
+
+
+================================================================================
+FILE: README.md
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 9.37 KB
+Extension: .md
+Language: text
+Location: README.md
+Relative Path: root
+Created: 2026-09-06 14:46:10 (Asia/Calcutta / GMT+06:30)
+Modified: 2026-09-07 09:13:42 (Asia/Calcutta / GMT+06:30)
+MD5: 316a3a69e720af6f6302e68b96d5bcf7
+SHA256: 2011d88c7a3bd1e88227dd471df1d638e899ae814c740d2cfd1b7d25797d0a32
+Encoding: UTF-8
+
+FILE CONTENT:
+----------------------------------------
+# Weather Info for Pincode
+
+A single REST API that returns weather information for a given **pincode** and
+**date**. Built with Spring Boot, backed by MySQL, and optimized so repeat
+calls avoid unnecessary external API traffic.
+
+This project was built against the following brief:
+
+> Provide a single REST API for weather information for a particular day and
+> a Pincode. Save pincode lat/long separately from the weather information.
+> Optimize repeat calls so previously resolved data is reused instead of
+> hitting external APIs again.
+
+---
+
+## How it works
+
+```
+GET /api/v1/weather?pincode=411014&for_date=2020-10-15
+```
+
+1. **Pincode → lat/long.** The service checks MySQL for a previously
+   resolved location for this pincode. If none exists, it calls the
+   [OpenWeather Geocoding API](https://openweathermap.org/api/geocoding-api)
+   once and saves the result (latitude, longitude, place name). Every
+   subsequent request for the same pincode reuses this row — the geocoding
+   API is never called twice for the same pincode.
+
+2. **Lat/long → weather.** The service checks MySQL for a previously fetched
+   weather record for this exact `(pincode, date)` pair. If none exists, it
+   calls the [OpenWeather Current Weather API](https://openweathermap.org/current)
+   (or, for past dates, the historical/timemachine endpoint) once and saves
+   the result. Every subsequent request for the same pincode and date is
+   served straight from the database.
+
+This two-level cache is what satisfies the "optimize for API calls"
+requirement: a pincode is geocoded at most once, and weather for a given
+pincode+date is fetched at most once.
+
+---
+
+## Data model
+
+Two tables, matching the brief's explicit ask to store pincode lat/long
+**separately** from weather information:
+
+**`locations`** — one row per pincode
+| Column | Description |
+|---|---|
+| `id` | Primary key |
+| `pincode` | Unique, indexed |
+| `latitude`, `longitude` | Resolved via Geocoding API |
+| `place_name` | Human-readable location name |
+| `source` | Which provider resolved this (`openweather`) |
+| `created_at` | When first resolved |
+
+**`weather_records`** — one row per `(pincode, date)`
+| Column | Description |
+|---|---|
+| `id` | Primary key |
+| `location_id` | Foreign key → `locations` |
+| `date` | The `for_date` this record is for |
+| `temperature_c`, `humidity`, `pressure`, `wind_speed`, `description` | Parsed weather fields |
+| `raw_payload` | Full raw JSON response, kept for auditability |
+| `fetched_at` | When this record was fetched |
+
+A unique constraint on `(location_id, date)` is what actually enforces
+"don't fetch this twice" at the database level, not just in application
+logic — this makes the caching correct even under concurrent requests.
+
+---
+
+## Tech stack
+
+| Concern | Choice |
+|---|---|
+| Framework | Spring Boot 3 (Java 17) |
+| Persistence | Spring Data JPA + **MySQL** (RDBMS, as required) |
+| External weather data | [OpenWeather API](https://openweathermap.org/current) — Geocoding + Current Weather |
+| Validation | Jakarta Bean Validation |
+| Testing | JUnit 5, Mockito, Spring's `MockRestServiceServer` and `TestRestTemplate` |
+| Test database | H2 in-memory (isolated from the MySQL runtime config) |
+
+No UI, no unrelated infrastructure — just what the brief asks for: a REST
+API, an RDBMS, and tests.
+
+---
+
+## Getting started
+
+### Prerequisites
+
+- Java 17+
+- Maven
+- MySQL running locally (or via Docker) — a user with permission to create
+  databases is enough; the app creates `weatherdb` automatically on first
+  run
+- A free [OpenWeather API key](https://openweathermap.org/api)
+
+### Configuration
+
+The app reads these as environment variables (see
+`src/main/resources/application.yml` for defaults):
+
+| Variable | Purpose | Default |
+|---|---|---|
+| `DB_USERNAME` | MySQL username | `root` |
+| `DB_PASSWORD` | MySQL password | `root` |
+| `OPENWEATHER_API_KEY` | Your OpenWeather API key | *(required, no default)* |
+
+### Run it
+
+```bash
+export DB_USERNAME=root
+export DB_PASSWORD=your-mysql-password
+export OPENWEATHER_API_KEY=your-openweather-key
+
+mvn spring-boot:run
+```
+
+The API is now live at `http://localhost:8080`.
+
+### Swagger / OpenAPI
+
+Swagger UI is available at:
+
+- `http://localhost:8080/swagger-ui.html`
+- `http://localhost:8080/swagger-ui/index.html`
+
+The generated OpenAPI document is available at:
+
+- `http://localhost:8080/v3/api-docs`
+
+Open Swagger UI, expand `GET /api/v1/weather`, click **Try it out**, enter a
+pincode and today's date, then click **Execute**. Swagger documents and tests
+the REST endpoint; it does not bypass OpenWeather's plan restrictions.
+
+### Run the tests
+
+```bash
+mvn test
+```
+
+Tests use an isolated in-memory H2 database and mocked HTTP calls — **no
+MySQL connection or real API key is required** to run the test suite.
+
+---
+
+## Try it
+
+### cURL
+
+```bash
+curl "http://localhost:8080/api/v1/weather?pincode=411014&for_date=2026-09-07"
+```
+
+### Postman
+
+- Method: `GET`
+- URL: `http://localhost:8080/api/v1/weather`
+- Params tab: `pincode` = `411014`, `for_date` = `2026-09-07`
+
+### Sample response
+
+```json
+{
+  "pincode": "411014",
+  "place": "Pune",
+  "date": "2026-09-07",
+  "temperature": 29.6,
+  "humidity": 73,
+  "pressure": 1005,
+  "windSpeed": 2.82,
+  "description": "broken clouds"
+}
+```
+
+### Seeing the optimization in action
+
+Call the same `pincode` + `for_date` twice. The first call geocodes the
+pincode and fetches weather from OpenWeather; the second call is served
+entirely from MySQL — check the application logs and you'll see no outbound
+calls to OpenWeather on the second request.
+
+---
+
+## API reference
+
+### `GET /api/v1/weather`
+
+| Query param | Type | Required | Notes |
+|---|---|---|---|
+| `pincode` | string | yes | 4–10 digits |
+| `for_date` | string | yes | `yyyy-MM-dd` |
+
+**Success — `200 OK`**
+```json
+{
+  "pincode": "411014",
+  "place": "Pune",
+  "date": "2020-10-15",
+  "temperature": 25.3,
+  "humidity": 60,
+  "pressure": 1012,
+  "windSpeed": 1.5,
+  "description": "clear sky"
+}
+```
+
+**Errors**
+
+| Status | Cause |
+|---|---|
+| `400 Bad Request` | Malformed `pincode` or `for_date` |
+| `404 Not Found` | Pincode could not be resolved to a location |
+| `502 Bad Gateway` | Upstream OpenWeather call failed |
+| `500 Internal Server Error` | Unexpected server error |
+
+All errors return a consistent JSON body:
+```json
+{
+  "timestamp": "2026-09-07T12:00:00Z",
+  "status": 404,
+  "error": "Not Found",
+  "message": "Could not resolve location for pincode: 000000",
+  "path": "/api/v1/weather"
+}
+```
+
+---
+
+## A note on historical weather data
+
+The assignment's sample input (`for_date: 2020-10-15`) is a past date.
+OpenWeather's **free** Current Weather endpoint only returns *today's*
+weather — historical lookups require their paid "One Call by Call"
+subscription (the `timemachine` endpoint).
+
+This service is built to call the correct endpoint automatically:
+- `for_date` = today → free Current Weather API (works with a free key)
+- `for_date` = any other date → historical/timemachine API (requires a paid
+  OpenWeather key; returns `502 Bad Gateway` on a free key, since
+  OpenWeather rejects the request rather than this service failing
+  silently)
+
+For a full, working demo with a free API key, use `for_date` = today's
+date. The historical code path is implemented correctly and is ready to
+work as soon as a paid key is supplied — nothing else needs to change.
+
+---
+
+## Project structure
+
+```
+src/main/java/com/example/weather/
+├── adapters/          # OpenWeather API client (geocoding + weather)
+├── api/                # REST controller + global exception handler
+├── config/             # RestTemplate and OpenWeather properties
+├── dto/                # Request/response shapes
+├── exception/          # Typed exceptions (PincodeNotFound, UpstreamService)
+├── model/               # JPA entities (Location, WeatherRecord)
+├── repository/          # Spring Data JPA repositories
+└── service/             # Core business logic (caching + orchestration)
+```
+
+Each layer has a single responsibility: the controller only validates and
+delegates, the service owns the caching decisions, the adapter only knows
+how to talk to OpenWeather, and the repositories only know how to talk to
+the database.
+
+---
+
+## Design decisions worth calling out
+
+- **Concurrency-safe caching without a lock service.** Two simultaneous
+  requests for a brand-new pincode may both miss the cache and both call
+  the Geocoding API — that's a harmless extra external call, not a
+  correctness bug. The save itself is protected: a unique constraint at the
+  database level rejects the second insert, and the service catches that
+  and re-reads the row the other request just wrote, rather than erroring
+  out.
+- **GET, not POST.** This is a read/lookup operation, so it uses query
+  parameters rather than a request body — this also makes it trivially
+  testable from a browser address bar, `curl -G`, or Postman's URL bar
+  without constructing JSON.
+- **No caching layer beyond the database.** The brief asks for the
+  information to be saved "in DB (RDBMS)" and optimized on repeat calls —
+  the RDBMS itself is the cache. No additional infrastructure (Redis,
+  in-memory caches) was introduced, keeping the solution scoped to what was
+  asked.
+================================================================================
